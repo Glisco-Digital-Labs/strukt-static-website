@@ -1,0 +1,314 @@
+.card{
+  /* border:1px solid var(--line); */
+  /* background:var(--brand-white); */
+  /* border-radius:var(--radius); */
+  font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+  padding: 0;
+  /* box-shadow:0 1px 12px rgba(0,0,0,.04); */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  position: relative;
+}
+
+.card .card-image {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card.tall .card-image {
+  height: 550px;
+}  
+
+.card .card-image img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    filter: grayscale();
+}
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    justify-content: start;
+    /* padding: 1rem 0.1rem; */
+    /* text-align: left; */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem
+}
+
+.card.centered .card-content {
+    align-self: anchor-center;
+    /* Safari Fixes Below */
+    margin: 0 auto;
+    /* width: clamp(300px, 50vw, 90%); */
+}
+
+.card .card-content h3 {
+  /* font-family: "Lato", sans-serif; */
+  /* align-self: center; */
+  margin-top:.2rem;
+  margin-bottom: 0.4rem;
+  font-size:1.4rem;
+  font-weight: 600;
+  /* font-style: italic; */
+
+}
+
+.card .card-content .sub {
+    align-self: center;
+    font-weight: 400;
+}
+
+.card .card-content .card-body {
+    display: contents;
+}
+
+.card .card-content > *  {
+    margin: 0.5rem 0;
+}
+
+.card .card-cta {
+    padding: 1rem 1.1rem;
+    align-self: center;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.1rem;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+.card .card-cta .btn {
+    /* background-color: var(--brand-primary); */
+    color: var(--brand-white);
+    border: none;
+}
+
+.card .card-cta .btn:hover {
+    /* background-color: var(--brand-secondary); */
+    color: var(--brand-white);
+}
+
+.card.tiny {
+    background: none;
+    /* display: flex;
+    flex-direction: row; */
+    box-shadow: none;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: left;
+}
+.card.tiny.with-image {
+    grid-template-rows: 1fr 1fr;
+}
+
+.card.tiny .card-content {
+    padding: 0 1rem 0 0 ;
+    text-align: left;
+    justify-content: left;
+    height: auto;
+    align-self: auto;
+}
+
+.card.tiny .card-body {
+    /* display: none; */
+}
+
+.card.tiny .card-cta  {
+    padding: 0;
+    margin-top: 0;
+    /* align-self: flex-start; */
+}
+
+.card.tiny .card-cta a.btn {
+    background: none;
+    color: var(--brand-primary);
+    font-weight: 500;
+    border: none;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.card.tiny .card-cta a.btn::after {
+    content: '+';
+    /* background-color: black; */
+    color: white;
+    content: "+";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8em;
+    height: 1.8em;
+    margin-left: 0.5em;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8em;
+    line-height: 1;
+}
+
+.card.tiny .card-image {
+    height: auto;
+    width: 40%;
+    border-radius: 50%;
+    margin: 0 30%;
+    flex-shrink: 0;
+}
+
+.card.tiny h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: black;
+    font-weight: 400;
+    text-align: left;
+    align-self: left;
+    text-transform: uppercase;
+    line-height: 1.75rem;
+}
+
+.card.tiny .sub {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: 300;
+    min-height: 5rem;
+}
+
+.card.centered .card-content h3 {
+    text-align: left;
+    align-self: left;
+}
+
+.product-card-content {
+  position: relative;
+  align-self: left;  
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.product-card-content .badge {
+  position: absolute;
+  top: -0.9rem;       /* sobe a badge para “encostar” ao topo do card */
+  right: 0.75rem;     /* encosta à direita */
+  z-index: 2;
+  pointer-events: none;
+
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  /* background-color: var(--brand-primary); */
+  color: var(--brand-white);
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+/* Opcional: versão “ribbon” para desktop */
+@media (min-width: 768px) {
+  .product-card-content .badge {
+    top: -8rem;
+    right: 8rem;
+  }
+}
+
+.product-card-content .price-line {
+  margin-top: 0.25rem;
+}
+
+.product-card-content .price {
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.product-card-content .price .per {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 0.25rem;
+  opacity: 0.8;
+}
+
+.product-card-content .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0.5rem;
+  display: grid;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.product-card-content .feature-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* Marcador simples (quadrado) antes de cada feature */
+.product-card-content .feature-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.product-card-content .cta-inline {
+  display: inline-block;
+  margin: 0.25rem auto 0;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.product-card-content .cta-inline:hover {
+  /* transform: translateY(-1px); */
+  /* opacity: 0.85; */
+  /* background-color: var(--brand-secondary); */
+  border-color: var(--brand-secondary);
+  color: var(--brand-white);
+}
+
+.product-card-content .smallnote {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin: 0.1rem 0 0.25rem;
+}
+
+
+@media (max-width: 768px) {
+    .card.tiny {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+        max-width: 90vw;
+    }
+    /* .card.tiny .card-cta {
+        align-self: flex-end;
+    } */
+
+    .grid.mobile-greedy .card.tiny  {
+        margin: 1rem;
+    }
+}

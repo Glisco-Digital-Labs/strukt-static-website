@@ -1,0 +1,318 @@
+/* ===== Base hero container ===== */
+.hero {
+  position: relative;
+  display: grid;         /* lets you center text later if needed */
+  overflow: hidden;      /* crop any overflow from the image */
+  padding: 0;
+  color: #fff;
+
+  /* Desktop/tablet default: full width, cap the height at 600px.
+     The clamp keeps it responsive but never taller than 600px. */
+  /* height: clamp(380px, 60vh, 650px); */
+}
+
+/* Absolute media layer (doesn’t push content) */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Image wrapper: crops the image */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* ===== Image positioning (unified approach) =====
+   We always center the image with top/left 50% and translate.
+   Then we switch scale mode per breakpoint: 
+   - Desktop: width:100% (crop vertically)
+   - Mobile:  height:100% (crop horizontally) 
+*/
+.hero-image-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  will-change: transform;
+
+  /* Desktop scale mode (crop vertically, keep full width) */
+  width: auto;
+  /* height: auto; */
+
+  /* Center the image by default */
+  transform: translate(-50%, -50%);
+}
+
+.hero-overlay {
+  position: relative;
+  inset: 0;
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;           
+  align-self: end;        
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  gap: 2rem; 
+}
+
+.hero-content h1 {
+    font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 4.2vw, 8rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    /* text-shadow: 0 2px 16px rgba(0,0,0,.35); */
+}
+
+.hero-content .sub {
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    margin: 0;
+}
+
+.hero-content .hero-cta .btn {
+    background-color: var(--brand-white);
+    opacity: 0.8;
+    color: var(--brand-primary);
+    border: none;
+}
+
+.hero.product {
+  height: auto;
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+
+.hero.product .hero-media {
+  position: unset;
+}
+
+.hero.product .hero-media .hero-image {
+  position: unset;
+  transform: none;
+}
+
+.hero.product .hero-media .hero-image img {
+  border-radius: 10px;
+  position: unset;
+  transform: none;
+}
+
+.hero.product .hero-content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  flex-direction: row;
+  text-align: left;
+  margin: 0 !important;
+  gap: 1rem;  
+}
+
+.hero.product .hero-content h1 {
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem 0;
+  color: black;
+  text-shadow: none;
+  min-width: 40%;
+}
+
+.hero.product .hero-content .sub {
+  color: black;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  margin: 0 0 0 2rem;
+  text-align: right;
+} 
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+  grid-template-areas:
+  "c1 c2 c3"
+  "main c5 c6"
+  "main c8 promo";
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.cell.main {
+  grid-area: main; 
+  background-color: white;
+}
+
+/* Optional: subtle overlay tint for consistency */
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 0;
+}
+
+/* Each cell */
+.hero-grid .cell {
+  display: flex; /* center contents */
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1); /* optional grid visibility */
+  z-index: 1; /* above overlay */
+  color: white;
+}
+
+/* Example: highlight content cells */
+.hero-grid .c4 h1 {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 900;
+  text-align: left;
+  margin: 0;
+}
+
+.hero-grid .c9 button {
+  background: white; /*white;*/
+  color: #111;
+  border: none;
+  padding: 1rem 2rem;
+  font-weight: 900;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-right: 1rem;
+}
+
+.cell.c4,
+.cell.c7 {
+  background-color: #fff;
+  color: #111;
+}
+
+.cell.c7 {
+    align-items: start;
+    padding-left: 1.5rem;
+}
+
+.cell.c9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--brand-primary);
+  /* background-color: #111; */
+  color: #eee;
+  padding: 1rem 2rem;
+}
+
+.hero .lede {
+    font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.2vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-align: left;
+    width: clamp(5rem, 30vw, 40rem);
+    margin-top: 4rem;
+}
+
+.lede em {
+  color: var(--brand-primary);
+  font-style: normal;
+}
+
+.hero-text {
+  padding-left: clamp(2rem, 2vw, 8rem);
+  text-align: left;
+}
+.hero-text.small {
+  font-size: clamp(1rem, 2.2vw, 4rem);
+}
+
+.featured-content-header {
+    font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 2.2vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.featured-content-body {
+    font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.1rem, 1.25vw, 2.5rem);
+    line-height: 1.3;
+    letter-spacing: 0; 
+    text-align: left;
+}
+
+
+/* .hero.product .hero-media .hero-image img {
+  object-position: unset;
+  min-height: 550px;
+}
+
+/* ===== Desktop / large screens ===== */
+@media (min-width: 851px) {
+  .hero {
+    /* Full width, max-height ~600px already handled by clamp above */
+  }
+
+  .hero-image-img {
+    /* Center composition on desktop. You can tweak if needed. */
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ===== Mobile / up to 850px ===== */
+@media (max-width: 850px) {
+  .hero.product {
+    /* Full width, max-height = 70vh as requested */
+    height: auto;
+    max-height: unset;
+  }
+
+  .hero-image-img {
+    /* Switch scale mode: fill height, crop horizontally */
+    width: auto;
+    height: 100%;
+
+    /* FOCAL-POINT CONTROL
+       --focal-x is the horizontal percentage of the image width
+       you want centered in the viewport (e.g., 60%).
+       We translate the image left by that same percentage of its own width,
+       aligning that vertical axis with the container center. */
+    --focal-x: 50%;
+
+    /* translateX uses the image’s own width as reference, so this is stable
+       across all viewport widths. */
+    transform: translate(calc(-1 * var(--focal-x)), -50%);
+  }
+
+  .hero.product .hero-image-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero.product .hero-content {
+    /* grid-template-columns: none;
+    grid-template-rows: 2fr 5fr; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero.product .hero-content .sub {
+    margin: 0;
+    text-align: left;
+  }
+}
+

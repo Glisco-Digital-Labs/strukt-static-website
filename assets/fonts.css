@@ -1,0 +1,155 @@
+/*
+| Name (common)             | Numeric Weight | Typical Use                      |
+| ------------------------- | -------------- | -------------------------------- |
+| Thin                      | 100            | Decorative, very light UI text   |
+| Extra Light / Ultra Light | 200            | Subtle display text              |
+| Light                     | 300            | Body text in elegant designs     |
+| **Regular / Normal**      | **400**        | Default body text                |
+| Medium                    | 500            | Slight emphasis, UI labels       |
+| **Bold**                  | **700**        | Headings, strong emphasis        |
+| Extra Bold / Heavy        | 800            | Impactful headings               |
+| **Black**                 | **900**        | Maximum contrast, posters, logos |
+*/
+@font-face {
+  font-family: 'Guggenheim';
+  src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Thin.woff2') format('woff2'),
+       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Guggenheim';
+  src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Light.woff2') format('woff2'),
+       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Guggenheim';
+  src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Regular.woff2') format('woff2'),
+       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Guggenheim';
+  src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Medium.woff2') format('woff2'),
+       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Guggenheim';
+  src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Bold.woff2') format('woff2'),
+       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Guggenheim';
+  src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Black.woff2') format('woff2'),
+       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.alert {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  /* font-family: 'Guggenheim', 'Helvetica Neue', sans-serif; */
+  font-weight: 900;
+  font-style: normal;
+  font-size: clamp(2rem, 6vw, 5rem);
+  line-height: clamp(2rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.positioning {
+  font-family: 'Guggenheim', sans-serif;
+  /* font-family: "Special Gothic Expanded One", sans-serif; */
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: 3.3rem;
+  max-width: 75%;
+  justify-self: right;
+  text-align: right;
+  margin-top: 3rem;
+  color: var(--brand-primary);
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+.dark-text {
+    color: var(--text);
+}

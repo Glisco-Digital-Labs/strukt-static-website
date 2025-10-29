@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="136" viewBox="0 0 500 136">
+    <rect width="500" height="136" fill="none"/>
+
+    <!-- Icon: 3x3 grid -->
+    <g id="icon" transform="translate(0,0)">
+    <!-- row 1 -->
+    <rect x="0"   y="0"   width="40" height="40" fill="#0E0E0E"/>
+    <rect x="48"  y="0"   width="40" height="40" fill="#0E0E0E"/>
+    <rect x="96"  y="0"   width="40" height="40" fill="#0E0E0E"/>
+    <!-- row 2 -->
+    <rect x="0"   y="48"  width="40" height="40" fill="#0E0E0E"/>
+    <rect x="48"  y="48"  width="40" height="40" fill="#0E0E0E"/>
+    <rect x="96"  y="48"  width="40" height="40" fill="#FF5C00"/>
+    <!-- row 3 -->
+    <rect x="0"   y="96"  width="40" height="40" fill="#0E0E0E"/>
+    <rect x="48"  y="96"  width="40" height="40" fill="#0E0E0E"/>
+    <rect x="96"  y="96"  width="40" height="40" fill="#0E0E0E"/>
+    </g>
+
+    <!-- Wordmark -->
+    <text
+        x="170"
+        y="90"
+        font-family="Inter, Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+        font-size="72"
+        font-weight="500"
+        letter-spacing="0"
+        fill="#0E0E0E">
+        struktigen
+    </text>
+</svg>

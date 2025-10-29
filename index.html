@@ -1,17 +1,38 @@
 <!doctype html>
+
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Strukt Digital</title>
+  <title>struktigen</title>
   <meta name="description" content="your digital transformation studio grounded in the principles of industrial design and architectural thinking."/>
   <link rel="stylesheet" href="/assets/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23555'/><text x='50' y='60' font-size='56' text-anchor='middle' fill='white'>ॐ</text></svg>">
+  <link rel="icon" href="data:image/svg+xml;utf8,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 136 136'>
+      <style>
+        rect.black { fill: %230E0E0E; }
+        rect.accent { fill: %23FF5C00; }
+        @media (prefers-color-scheme: dark) {
+          rect.black { fill: %23FFFFFF; }
+          rect.accent { fill: %23FF5C00; }
+        }
+      </style>
+      <rect width='136' height='136' fill='none'/>
+      <g>
+        <rect class='black' x='0' y='0' width='40' height='40'/>
+        <rect class='black' x='48' y='0' width='40' height='40'/>
+        <rect class='black' x='96' y='0' width='40' height='40'/>
+        <rect class='black' x='0' y='48' width='40' height='40'/>
+        <rect class='black' x='48' y='48' width='40' height='40'/>
+        <rect class='accent' x='96' y='48' width='40' height='40'/>
+        <rect class='black' x='0' y='96' width='40' height='40'/>
+        <rect class='black' x='48' y='96' width='40' height='40'/>
+        <rect class='black' x='96' y='96' width='40' height='40'/>
+      </g>
+    </svg>">  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Special+Gothic+Expanded+One:wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
 
   <link rel="preload" href="/assets/fonts/guggenheim-sans/woff/Guggenheim-Thin.woff2" as="font" type="font/woff2" >
   <link rel="preload" href="/assets/fonts/guggenheim-sans/woff/Guggenheim-Light.woff2" as="font" type="font/woff2" >
@@ -42,23 +63,28 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMXWRRDN"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <py-header title="stru<em>k</em>t" subtitle="">
-    <a href="/">home</a>
+  <py-header  subtitle="">
+    <a href="/" class="active">home</a>
     <!-- <a href="/cursos/">Cursos</a> -->
-    <a href="/aulas/">produkts</a>
-    <a href="/sobre/">services</a>
-    <a href="/sobre/">kase studies</a>
-    <a href="/sobre/">skool</a>
-    <a href="/sobre/">about us</a>
+    <a href="/products/">products</a>
+    <a href="/services/">services</a>
+    <!-- <a href="/sobre/">kase studies</a>
+    <a href="/sobre/">skool</a> -->
+    <a href="/about/">about us</a>
     <!-- <a href="/contactos/">Contactos</a> -->
   </py-header>
 
   <section class="hero-container">
       <py-hero
-        title="Força. Presença. Flowen."
-        subtitle="Movimento para a tua melhor versão."
-        image="/assets/img/hero4.png"
+        eyebrow="Discipline.<br/>Design.<br/>Freedom."
+        title="Struktigen"
+        subtitle="We build systems that think — not to replace human intelligence, but to amplify it."
+        lede="is your <em>digital transformation studio</em> grounded in the principles of <em>industrial design</em> and <em>architectural thinking</em>. "
+        featured-content="You already know your business. We help you see it differently — to simplify, systemise, and scale with confidence. Think better to make sharper decisions. Build smarter to turn ideas into momentum."
+        image="/assets/img/hero1-executive-male-1.jpg"
         overlay="linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.25))"
+        cta-text="Discover how"
+        cta-link="/about/"
         position="center 25%"
         min-h="60vh">
       </py-hero>     
@@ -77,391 +103,121 @@
 
     </section>
 
-  <main class="wrap">
-      <py-section>
+  <main class="">
+      <py-section style="wrap airy">
         <div class="alert">
          The stakes are higher.<br/>  
           The noise is louder.<br/>
           Clarity is rare.
         </div>
         <div class="positioning">
-          We build systems, interfaces, and products that bring structure back to digital transformation.
+          We build systems that think.<br/>And help you think.
         </div>
       </py-section>
 
-      <section class="circle-section" aria-labelledby="principles-title">
-        <div class="container">
-          <!-- <header class="section-head">
-            <div class="eyebrow">Our Design Principles</div>
-            <h2 id="principles-title">Geometry with a point of view</h2>
-          </header> -->
-
-          <div class="principles-wrap" role="img" aria-label="Three intersecting circles representing Strukt's design principles with a Bauhaus grid background.">
-            <div class="circles">
-              <div class="circle a">
-                <div>
-                  <div class="label">Systemic Thinking</div>
-                  <div class="desc">Connecting design, data, and decisions so parts cohere into purposeful wholes.</div>
-                </div>
-              </div>
-              <div class="circle b">
-                <div>
-                  <div class="label">Architectural Clarity</div>
-                  <div class="desc">Making complexity legible with structures that explain themselves.</div>
-                </div>
-              </div>
-              <div class="circle c">
-                <div>
-                  <div class="label">Industrial Discipline</div>
-                  <div class="desc">Building modular, scalable systems that endure beyond the first release.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="legend" aria-label="Short explanations of each principle">
-            <div class="card">
-              <h3>Systemic Thinking</h3>
-              <p>We model interactions, not just interfaces—so change in one place doesn’t break another.</p>
-            </div>
-            <div class="card">
-              <h3>Architectural Clarity</h3>
-              <p>We reduce ambiguity with clean abstractions, explicit boundaries, and honest constraints.</p>
-            </div>
-            <div class="card">
-              <h3>Industrial Discipline</h3>
-              <p>We prize reliability and repeatability—design systems, automation, and rigorous QA.</p>
-            </div>
-          </div>
-          <div class="positioning">
-            We're not just consultants or developers; we're architectural thinkers, digital builders, and trusted collaborators.
-          </div>
-        </div>
-      </section>
-
-      <section class="insight-banner">
-        <div class="container">
-          <div class="eyebrow">Featured Insight</div>
-          <h2>Impactful AI</h2>
-          <p class="lede">
-            From fundations to human augmentation. A practical framework for leaders who want to modernize 
-            without losing control. Explore how structure and strategy can restore clarity in a noisy digital world.
-          </p>
-          <div class="cta"><a href="/whitepaper.pdf" class="button alt">Download the White Paper →</a></div>
-          
-        </div>
-      </section>
-
-      <section class="provenance" aria-labelledby="provenance-title">
-        <div class="container">
-          <header class="section-head">
-            <div class="eyebrow">how we can help you</div>
-            <h2 id="provenance-title">Digital Transformation Services</h2>
-            <p class="lede">We shape and deliver new business models, productivity transformations and growth opportunities through digital architectures that fuse artistic expresssion with industrial resilience and scalability.</p>
-          </header>
-          <div class="h3grid section-body">
-            <py-grid style="airy">
-              <py-card 
-                title="Systems that think" 
-                description="Inteligent business solutions that transform productvity"
-                image="/assets/img/acrylic-system.jpg">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil totam at praesentium iusto tempore molestias sapiente, architecto incidunt repellat excepturi omnis exercitationem, dicta animi eos vitae assumenda eveniet laboriosam soluta?
-                <a href="" class="button">Learn more</a>
-              </py-card>
-              
-              <py-card 
-                title="Interfaces that clarify" 
-                description="Immersive user experiences that improve decision making."
-                image="/assets/img/acrylic-interface.jpg"></py-card>
-              
-              <py-card 
-                title="Products that accelerate" 
-                description="Flexible and scalable products that open possibilities."
-                image="/assets/img/acrylic-structure.jpg"></py-card>
-
-              <!-- <py-card
-                title="Systems that think"
-                subtitle="Inteligent business solutions that transform productvity."
-                
-                style="tiny">
-                <div class="nowrap">
-                  <div class="linkoption">
-                    <h4>Business Process Automation</h4>
-                    <div class="link-description">Streamline repetitive tasks through smart orchestration.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Data Integration & Intelligence</h4>
-                    <div class="link-description">Connect silos and turn data into actionable insight.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>AI-Enhanced Decision Support</h4>
-                    <div class="link-description">From forecasting to recommendations, let data guide you.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Digital Operations Platforms</h4>
-                    <div class="link-description">Unified systems for finance, logistics, and customer care.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Knowledge Systems Design</h4>
-                    <div class="link-description">Architect information so teams think and act faster.</div>
-                  </div>
-
-                </div>
-              </py-card>
-            
-              <py-card
-                title="Interfaces that clarify"
-                subtitle="Immersive user experiences that improve decision making. "
-                style="tiny">
-                <div class="nowrap">
-                  <div class="linkoption">
-                    <h4>UX & Service Design</h4>
-                    <div class="link-description">Map user journeys that make complex systems feel effortless.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Web & Mobile Applications</h4>
-                    <div class="link-description">Build responsive tools that empower daily work.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Interactive Dashboards</h4>
-                    <div class="link-description">Clarity through visualization, not clutter.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Design Systems & Guidelines</h4>
-                    <div class="link-description">Scalable design logic for teams and platforms.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Human-Centered Research</h4>
-                    <div class="link-description">Insight that keeps every screen grounded in reality.</div>
-                  </div>
-
-                </div>
-              </py-card>
-
-              <py-card
-                title="Products that accelerate"
-                subtitle="Flexible and scalable products that open possibilities. "
-                style="tiny">
-                <div class="nowrap">
-                  <div class="linkoption">
-                    <h4>FabrikOS</h4>
-                    <div class="link-description">Your modular digital backbone for structured business data.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Calkulator</h4>
-                    <div class="link-description">Stochastic methods for realistic planning and forecasting.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Prospekt</h4>
-                    <div class="link-description">AI-driven market intelligence and segmentation engine.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>Diagnostik</h4>
-                    <div class="link-description">Automated website and performance diagnostics.</div>
-                  </div>
-
-                  <div class="linkoption">
-                    <h4>AutoKraft</h4>
-                    <div class="link-description">Generate optimized websites in minutes, not months.</div>
-                  </div>
-
-                </div>
-              </py-card> -->
-            </py-grid>
-          </div>  
-          <div class="positioning">
-            We operate as a studio: intimate, intentional, and multidisciplinary. Each engagement is tailored and personal. 
-          </div>
-        </div>
-      </section>  
-
-      <section class="insight-banner">
-        <div class="container">
-          <div class="eyebrow">Featured Insight</div>
-          <h2>Impactful AI</h2>
-          <p class="lede">
-            From fundations to human augmentation. A practical framework for leaders who want to modernize 
-            without losing control. Explore how structure and strategy can restore clarity in a noisy digital world.
-          </p>
-          <div class="cta"><a href="/whitepaper.pdf" class="button alt">Download the White Paper →</a></div>
-          
-        </div>
-      </section>
-
-
-      <!-- <py-section
-        title="How can we help you?"
-        subtitle=""
+      <py-section 
+        style="wrap"
+        eyebrow="how we can help you"
+        title="Digital Transformation Services"
+        lede="We shape and deliver new business models, productivity transformations, and growth opportunities through digital architectures that turn ambition into scalable, resilient realities."
         style="h3grid nowrap">
 
-        <py-grid>
-          <py-card
-            title="Systems that think"
-            subtitle="Inteligent business solutions that transform productvity. From automation to AI."
-            
-            style="tiny">
-            <div class="nowrap">
-              <div class="linkoption">
-                <h4>Business Process Automation</h4>
-                <div class="link-description">Streamline repetitive tasks through smart orchestration.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Data Integration & Intelligence</h4>
-                <div class="link-description">Connect silos and turn data into actionable insight.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>AI-Enhanced Decision Support</h4>
-                <div class="link-description">From forecasting to recommendations, let data guide you.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Digital Operations Platforms</h4>
-                <div class="link-description">Unified systems for finance, logistics, and customer care.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Knowledge Systems Design</h4>
-                <div class="link-description">Architect information so teams think and act faster.</div>
-              </div>
-
-            </div>
+        <py-grid style="airy">
+          <py-card 
+            title="Systems that think" 
+            subtitle="Transform operations into intelligent ecosystems. We design and build adaptive solutions that automate complexity, connect data and decisions, and help your business think faster, act smarter, and scale confidently."
+            image="/assets/img/acrylic-system.jpg"
+            href="/services/index.html#systems"
+            button-label="Automate">            
           </py-card>
-        
-          <py-card
-            title="Interfaces that clarify"
-            subtitle="Intuitive user experiences that improve decision making. From dahsboards, to interactive apps."
-            style="tiny">
-            <div class="nowrap">
-              <div class="linkoption">
-                <h4>UX & Service Design</h4>
-                <div class="link-description">Map user journeys that make complex systems feel effortless.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Web & Mobile Applications</h4>
-                <div class="link-description">Build responsive tools that empower daily work.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Interactive Dashboards</h4>
-                <div class="link-description">Clarity through visualization, not clutter.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Design Systems & Guidelines</h4>
-                <div class="link-description">Scalable design logic for teams and platforms.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Human-Centered Research</h4>
-                <div class="link-description">Insight that keeps every screen grounded in reality.</div>
-              </div>
-
-            </div>
-          </py-card>
-
-          <py-card
-            title="Products that accelerate"
-            subtitle="Flexible and scalable products that open possibilities. Solutions that grow with your business."
-            style="tiny">
-            <div class="nowrap">
-              <div class="linkoption">
-                <h4>FabrikOS</h4>
-                <div class="link-description">Your modular digital backbone for structured business data.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Calkulator</h4>
-                <div class="link-description">Stochastic methods for realistic planning and forecasting.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Prospekt</h4>
-                <div class="link-description">AI-driven market intelligence and segmentation engine.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>Diagnostik</h4>
-                <div class="link-description">Automated website and performance diagnostics.</div>
-              </div>
-
-              <div class="linkoption">
-                <h4>AutoKraft</h4>
-                <div class="link-description">Generate optimized websites in minutes, not months.</div>
-              </div>
-
-            </div>
-          </py-card>
+          
+          <py-card 
+            title="Interfaces that clarify" 
+            subtitle="Clarity creates confidence. We craft intuitive digital experiences — copilots, dashboards, and decision tools — that turn complexity into insight, helping teams focus on what matters most and move decisively towards your goals."
+            image="/assets/img/acrylic-interface.jpg"
+            href="/services/index.html#experiences"
+            button-label="Clarify"></py-card>
+          
+          <py-card 
+            title="Products that accelerate" 
+            subtitle="From strategy to software, we build scalable products that open new possibilities. Our SaaS solutions and frameworks let you innovate faster, reduce friction, and deliver growth with enduring impact, while reducing delivery risk."
+            image="/assets/img/acrylic-structure.jpg"
+            href="/products"
+            button-label="Accelerate"></py-card>
         </py-grid>
-        
+        <div class="positioning">
+            We operate as a studio: intimate, intentional, and multidisciplinary. Each engagement is tailored and personal. 
+          </div>
+      </py-section>
+
         
 
-      </py-section> -->
 
-      <section class="provenance" aria-labelledby="provenance-title">
+      <section class="insight-banner">
         <div class="container">
-          <header class="section-head">
-            <div class="eyebrow">Where We Come From</div>
-            <h2 id="provenance-title">Our experience built the foundation</h2>
-            <p class="lede">Our founder has led digital transformation for global institutions — shaping scalable systems, design languages, and AI-enabled platforms. Strukt is the essence of those decades distilled into a modern studio.</p>
-          </header>
+          <div class="eyebrow">Featured Insight</div>
+          <h2>Impactful AI</h2>
+          <p class="lede">
+            From fundations to human augmentation. A practical framework for leaders who want to modernize 
+            without losing control. Explore how structure and strategy can restore clarity in a noisy digital world.
+          </p>
+          <div class="cta"><a href="/whitepaper.pdf" class="button alt">Download the White Paper →</a></div>
+          
+        </div>
+      </section>
+
+
+      <py-section 
+        style="wrap"
+        eyebrow="Where We Come From"
+        title="Democratising Transformation"
+        lede="Our experience built the foundation. The methods our founder used to transform global institutions can now transform yours. We bring the discipline, structure, and technology once reserved for enterprise programs to ambitious SMEs — delivering enterprise-grade clarity without the enterprise overhead. Struktigen is the essence of those decades distilled into a modern studio."
+        style="h3grid nowrap">
 
           <!-- Horizontal logo carousel -->
-          <div class="logo-carousel-wrapper">
-            <div class="logo-track">
-              <div class="logo-wrapper">L1</div>
-              <div class="logo-wrapper">L2</div>
-              <div class="logo-wrapper">L3</div>
-              <div class="logo-wrapper">L4</div>
-              <div class="logo-wrapper">L5</div>
-              <div class="logo-wrapper">L6</div>
-              <div class="logo-wrapper">L7</div>
-              <div class="logo-wrapper">L8</div>
-              <div class="logo-wrapper">L1</div>
-              <div class="logo-wrapper">L2</div>
-              <div class="logo-wrapper">L3</div>
-              <div class="logo-wrapper">L4</div>
-              <div class="logo-wrapper">L5</div>
-              <div class="logo-wrapper">L6</div>
-              <div class="logo-wrapper">L7</div>
-              <div class="logo-wrapper">L8</div>
-            </div>
-          </div>
+          <py-carousel>
 
+          </py-carousel>
+
+          
           <div class="timeline">
             <div class="node">
               <h3>Enterprise Architecture</h3>
-              <p>Shaping digital ecosystems for banks and consultancies.</p>
+              <p>Born from shaping digital ecosystems for banks and consultancies.</p>
             </div>
             <div class="node">
               <h3>Design Systems</h3>
-              <p>Unifying experiences across brands and devices.</p>
+              <p>Matured by unifying memorable experiences across brands and devices.</p>
             </div>
             <div class="node">
               <h3>Automation & AI</h3>
-              <p>Bringing intelligence and structure to modern workflows.</p>
+              <p>Known for bringing actionalble intelligence and structure to modern workflows.</p>
             </div>
           </div>
           <div class="positioning">
             We don’t do cookie-cutter digital—we craft thoughtful, scalable outcomes for teams who value both creative direction and technical depth. 
           </div>
         </div>
+      </py-section >
+    
+      <section class="insight-banner last businessman">
+        <div class="container">
+          <div class="eyebrow">Your move. We're ready.</div>
+          <h2>Get in touch</h2>
+          <p class="lede">
+            Big plans start with small conversations. Tell us about your goals, what’s in your way, 
+            or where you want to go — we’ll help you shape the next step.
+
+          </p>
+          <py-contact-form 
+              fields="name, company, title, email" 
+              labels='{"name":"Your name","company":"Your company","title":"Job title","email":"Work email"}'
+              origin="homepage"
+              title="Reach out to start a conversation"
+              success-msg="Thanks for reaching out! We'll get back to you soon."
+              error-msg="Sorry, something went wrong. Please try again later."/>
+        </div>
       </section>
-    
-    
   </main>
 
   <py-footer>

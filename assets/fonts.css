@@ -87,6 +87,11 @@
   text-align: right;
   margin-top: 3rem;
   color: var(--brand-primary);
+  text-transform: lowercase;
+}
+
+.positioning.airy {
+  padding: 5rem 0;
 }
 
 .lato-thin {

@@ -15,6 +15,16 @@ header.site .wrap {
   position: relative; /* for the mobile panel positioning */
 }
 
+header.site .logo {
+  display: flex;
+  height: 50px;
+  justify-content: flex-start;
+}
+
+header.site .logo img {
+  width: 100%;
+  height: auto;
+}
 .brand h1{margin:0;font-size:clamp(1.2rem,3.2vw,2.6rem)}
 .brand .sub{margin:0;color:var(--muted); font-size:.95rem}
 nav.site a{

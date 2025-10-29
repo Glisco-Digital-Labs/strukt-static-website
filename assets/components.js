@@ -12,7 +12,10 @@
         <header class="site" role="banner">
           <div class="wrap">
             <div class="brand">
-              <h1><a href="/">${title}</a></h1>
+              <!-- <h1><a href="/">${title}</a></h1> -->
+              <div class="logo">
+                <img src="/assets/img/logo/struktigen-logo-horizontal.svg" alt="struktigen logo"/>
+              </div>
               ${subtitle ? `<p class="sub">${subtitle}</p>` : ''}
             </div>
             <!-- Burger button (shown <768px) -->
@@ -41,9 +44,9 @@
       this.innerHTML = `
         <footer class="site" role="contentinfo">
           <div class="wrap">
-              <div class="copyright">© <span data-year></span> Strukt Digital • Discipline. Design. Freedom.</div>
-              <div class="contacts">Follow us on Instagram [<a href="https://www.instagram.com/strukt.digital/" target="new">@strukt.digital</a>] or LinkedIn [<a href="https://www.linkedin.com/strukt.digital/" target="new">@strukt.digital</a>]</div>
-              <div class="discreet"><em>Caution</em>: engaging us comes with the risk of shaping a compelling future — structured, scalable, and beautifully designed. Do it now — or regret it later.</div>
+              <div class="copyright">© <span data-year></span> struktigen. we build systems that think – and help you think.</div>
+              <!-- <div class="contacts">Follow us on Instagram [<a href="https://www.instagram.com/strukt.digital/" target="new">@strukt.digital</a>] or LinkedIn [<a href="https://www.linkedin.com/strukt.digital/" target="new">@strukt.digital</a>]</div> -->
+              <div class=""><em>Caution</em>: engaging us comes with the risk of shaping a compelling future — structured, scalable, and beautifully designed. Do it now — or regret it later.</div>
               <div class="custom-content">${content}</div>
           </div>
         </footer>
@@ -75,17 +78,22 @@
 
       const title = this.getAttribute('title') || '';
       const subtitle = this.getAttribute('subtitle') || '';
+      const lede = this.getAttribute('lede') || '';
+      const eyebrow = this.getAttribute('eyebrow') || '';
       const style = this.getAttribute('style') || '';
       const body = this.innerHTML.trim();
       const wrapper = this.getAttribute('wrapper') || 'nowrap';
       this.innerHTML = `
-        <section class="section ${style}">
-          <div class="${wrapper}">
-            ${title ? `<h2 class="section-title dark-text">${title}</h2>` : ''}
-            ${subtitle ? `<p class="section-subtitle">${subtitle}</p>` : ''}
-            <div class="section-body">${body}</div>
-          </div>
-        </section>
+      <section class="section ${style}">
+        <div class="container ${wrapper}">
+          <header class="section-head">
+            <div class="eyebrow">${eyebrow}</div>
+            <h2 class="section-title dark-text">${title}</h2>
+            <p class="lede">${lede}</p>
+          </header>
+          <div class="h3grid section-body">${body}</div>
+        </div>
+      </section>
       `;
     }
   }
@@ -129,12 +137,87 @@
 
   class PYHero extends HTMLElement {
     connectedCallback() {
-      const title     = this.getAttribute('title') || '';
+      const eyebrow   = this.getAttribute('eyebrow') || 'Discipline.<br/>Design.<br/>Freedom.';
+      const title     = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
       const subtitle  = this.getAttribute('subtitle') || '';
+      const lede      = this.getAttribute('lede') || 'We build systems that think — not to replace human intelligence, but to amplify it.';
       const ctaText   = this.getAttribute('cta-text') || '';
       const ctaLink   = this.getAttribute('cta-link') || '#';
+      const featuredContent = this.getAttribute('featured-content') || '';
       const image     = this.getAttribute('image') || '';                 // e.g. /assets/hero.jpg
       const style     = "hero " + (this.getAttribute('style') || '');    
+      const overlay   = this.getAttribute('overlay')                      // e.g. "rgba(0,0,0,.5)" or "linear-gradient(...)"
+                        || 'linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35))';
+      const position  = this.getAttribute('position') || 'center 30%';    // CSS background-position
+      const minH      = this.getAttribute('min-h') || '52vh';             // optional
+
+      const ctaContent = ctaLink ? `<a class="btn" href="${ctaLink}" aria-label="${ctaText}">${ctaText}</a>` : ctaText;
+      const cta        = ctaText ? ctaContent : '';
+
+      console.log('Hero component:', this.getAttribute('overlay') ? 'with overlay' : 'no overlay');
+      // Note: no self-closing divs; keep proper open/close tags.
+      this.innerHTML = `
+        <section class="hero ${style} ${image ? '' : ' hero--noimage'}" 
+                style="--hero-min-h:${minH}; --hero-position:${position}; --hero-overlay:${overlay};">
+          ${image ? `
+            <div class="hero-media">
+              <div class="hero-image" "> 
+                <img src="${image}" alt="${title ? title : ''}" loading="lazy" class="hero-image-img"/>
+              </div>
+              <div class="hero-overlay" style="background: ${overlay}"></div>
+            </div>` : ''
+          }
+          <div class="hero-content">
+            <section class="hero-grid">
+              <div class="cell c1"></div>
+              <div class="cell c2"></div>
+              <div class="cell c3"></div>
+              <div class="cell c4 main">
+                <div class="hero-main-wrapper">
+                  <div class="hero-text">
+                    <div class="eyebrow">${eyebrow}</div>
+                  </div>
+                  <div class="hero-text small">
+                    <h1 class="hero-title">${title} <span class="lede">${lede}</span></h1>
+                  </div>    
+                </div>
+              </div>  
+              <div class="cell c5"></div>
+              <div class="cell c6"></div>
+              
+              <div class="cell c8">
+              </div>
+              <div class="cell c9">
+                <div class="featured-content-header">
+                  Think better. <br/>Build smarter.
+                </div>
+                <div class="featured-content-body">
+                  ${featuredContent}
+                </div>
+                <div class="hero-cta">${cta}</div>
+              </div>
+            </section>
+          </div>
+          
+        </section>
+      `;
+    }
+  }
+  customElements.define('py-hero', PYHero);
+
+  class PYInnerHero extends HTMLElement {
+    connectedCallback() {
+      const eyebrow   = this.getAttribute('eyebrow') || 'Discipline.<br/>Design.<br/>Freedom.';
+      const title     = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
+      const subtitle  = this.getAttribute('subtitle') || '';
+      const lede      = this.getAttribute('lede') || 'We build systems that think — not to replace human intelligence, but to amplify it.';
+      const ctaText   = this.getAttribute('cta-text') || '';
+      const ctaLink   = this.getAttribute('cta-link') || '#';
+      const focusTitle = this.getAttribute('focus-title') || 'Think better. <br/>Build smarter.'
+
+      const featuredContent = this.getAttribute('featured-content') || '';
+      const image     = this.getAttribute('image') || '';                 // e.g. /assets/hero.jpg
+      const style     = "hero-inner " + (this.getAttribute('style') || '');    
       const overlay   = this.getAttribute('overlay')                      // e.g. "rgba(0,0,0,.5)" or "linear-gradient(...)"
                         || 'linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35))';
       const position  = this.getAttribute('position') || 'center 30%';    // CSS background-position
@@ -151,54 +234,44 @@
           ${image ? `
             <div class="hero-media">
               <div class="hero-image" "> 
-                <img src="${image}" alt="${title ? title : 'Imagem do herói'}" loading="lazy" class="hero-image-img"/>
+                <img src="${image}" alt="${title ? title : ''}" loading="lazy" class="hero-image-img"/>
               </div>
               <div class="hero-overlay" style="background: ${overlay}"></div>
             </div>` : ''
           }
           <div class="hero-content">
             <section class="hero-grid">
-              <div class="cell c1"></div>
-              <div class="cell c2"></div>
+              <div class="cell c1 main">
+                <div class="wrap">
+                 <div class="eyebrow">${eyebrow}</div>
+                 <h1 class="hero-title">${title}</h1>
+                 <div class="hero-subtitle">${lede}</div>
+                </div> 
+              </div>
               <div class="cell c3"></div>
-              <div class="cell c4 main">
-                <div class="hero-main-wrapper">
-                  <div class="hero-text">
-                    <h1>Discipline.<br>Design.<br>Freedom.</h1>
-                  </div>
-                  <div class="hero-text small">
-                    <div class="lede">
-                      your <em>digital transformation studio</em> grounded in the principles of <em>industrial design</em> and <em>architectural thinking</em>.
-                    </div>
-                  </div>    
-                </div>
-              </div>  
+              <div class="cell c4"></div>  
               <div class="cell c5"></div>
               <div class="cell c6"></div>
-              
-              <div class="cell c8">
-              </div>
+              <div class="cell c7"></div>  
+              <div class="cell c8"></div>
               <div class="cell c9">
                 <div class="featured-content-header">
-                  Digital Transformation Demystified
+                  ${focusTitle}
                 </div>
                 <div class="featured-content-body">
-                  Why Digital is a Boardroom Issue. Why is digital more than just “IT support”? Check out our video series, explaining all you need to know about your digital transformation.
+                  ${featuredContent}
                 </div>
-                <button>Explore</button>
+                <div class="hero-cta">${cta}</div>
               </div>
             </section>
           </div>
-          <!-- <div class="wrap hero-content">
-            <h1>${title}</h1>
-            ${subtitle ? `<p class="sub lato-light">${subtitle}</p>` : ''}
-            <div class="hero-cta">${cta}</div>
-          </div> -->
+          
         </section>
       `;
     }
   }
-  customElements.define('py-hero', PYHero);
+  customElements.define('py-inner-hero', PYInnerHero);
+
   // Card
   class PYCard extends HTMLElement{
     connectedCallback(){
@@ -231,6 +304,47 @@
     }
   }
   customElements.define('py-card', PYCard);
+
+  class PYCarousel extends HTMLElement{
+    connectedCallback(){
+      if (this.dataset.upgraded === '1') return; // <-- guard
+      this.dataset.upgraded = '1';
+
+      this.innerHTML = `
+        <div class="logo-carousel-wrapper">
+          <div class="logo-carousel-inner">
+            <div class="logo-track">
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/royal-bank-of-scotland-logo.svg" alt="Royal Bank of Scotland"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/ubs-logo.png" alt="UBS Warburg"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/Deutsche_Borse_Group_Logo.png" alt="Deutsche Börse"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/british-airways-logo.png" alt="British Airways"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/BBVA-Logo.png" alt="BBVA"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/hsbc-logo.png" alt="HSBC"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/audi-logo.png" alt="Audi"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/credit-suisse-logo.png" alt="Credit Suisse"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/lloyds-banking-logo.png" alt="Lloyds Banking Group"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/kpmg-logo.png" alt="KPMG"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/porto-editora-logo.png" alt="Porto Editora"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/wook-logo.png" alt="Wook"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/royal-bank-of-scotland-logo.svg" alt="Royal Bank of Scotland"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/ubs-logo.png" alt="UBS Warburg"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/Deutsche_Borse_Group_Logo.png" alt="Deutsche Börse"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/british-airways-logo.png" alt="British Airways"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/BBVA-Logo.png" alt="BBVA"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/hsbc-logo.png" alt="HSBC"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/audi-logo.png" alt="Audi"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/credit-suisse-logo.png" alt="Credit Suisse"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/lloyds-banking-logo.png" alt="Lloyds Banking Group"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/kpmg-logo.png" alt="KPMG"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/porto-editora-logo.png" alt="Porto Editora"/></div>
+              <div class="logo-wrapper"><img src="/assets/img/client-logos/wook-logo.png" alt="Wook"/></div>
+            </div>
+          </div>
+        </div>  
+      `;
+    }
+  }
+  customElements.define('py-carousel', PYCarousel);
 
   // class PYPopUp extends HTMLElement {
   //   connectedCallback() {
@@ -523,5 +637,94 @@
   customElements.define('py-faqs', PYFaqs);
   customElements.define('py-faq', PYFaq);
 
+  /**
+ * ContactForm Component
+ * ---------------------
+ * Creates a simple contact form that posts to a Google Apps Script endpoint.
+ *
+ * Usage:
+ *   new ContactForm({
+ *     target: '#contact',            // CSS selector or element
+ *     endpoint: 'https://script.google.com/macros/s/XXXX/exec',
+ *     fields: ['name', 'email', 'message'],
+ *     labels: {
+ *       name: 'Your name',
+ *       email: 'Your email',
+ *       message: 'Your message'
+ *     }
+ *   });
+ */
 
+  class PYContactForm extends HTMLElement {
+  connectedCallback() {
+    if (this.dataset.upgraded === '1') return;
+    this.dataset.upgraded = '1';
+    const encoded = this.getAttribute('data-endpoint') || 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3ZGx0N1NsNVhxMWdTTGI0Wm14RGNCcFV2OFFVS1Q4UHNhaDFNazBvT2lFa01HaEpmUTcwblg2Zm5jQkxiaGxSaWgtdy9leGVj';
+    const endpoint = atob(encoded.trim());
+    const title = this.getAttribute('title') || 'Contact Us';
+    const cta = this.getAttribute('cta') || 'Send';
+    const successMsg = this.getAttribute('success-msg') || 'Thanks — message sent!';
+    const errorMsg = this.getAttribute('error-msg') || 'Sorry, something went wrong.';
+
+    // Fields (comma-separated list)
+    const fields = (this.getAttribute('fields') || 'name,email,message')
+      .split(',')
+      .map(f => f.trim());
+
+    // Labels (optional)
+    const labels = JSON.parse(this.getAttribute('labels') || '{}');
+
+    // Build form HTML
+    const inputs = fields.map(name => {
+      const label = labels[name] || name.charAt(0).toUpperCase() + name.slice(1);
+      const type = name === 'email' ? 'email' : (name === 'message' ? 'textarea' : 'text');
+      return `
+        <div class="form-field">
+          ${type === 'textarea'
+            ? `<textarea name="${name}" placeholder="${label}" required></textarea>`
+            : `<input type="${type}" name="${name}" placeholder="${label}" required />`}
+        </div>`;
+    }).join('');
+
+    this.innerHTML = `
+      <form class="py-contact-form">
+        ${title ? `<h3>${title}</h3>` : ''}
+        ${inputs}
+        <button type="submit" class="btn">${cta}</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    `;
+
+    const form = this.querySelector('form');
+    const status = this.querySelector('.form-status');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      status.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {'Content-Type': 'application/json'}
+        });
+        if (res.ok) {
+          form.reset();
+          status.textContent = successMsg;
+        } else throw new Error('Network error');
+      } catch (err) {
+        console.error(err);
+        status.textContent = errorMsg;
+      }
+    });
+  }
+}
+
+customElements.define('py-contact-form', PYContactForm);
+
+/*
+Deployment ID: AKfycbwdlt7Sl5Xq1gSLb4ZmxDcBpUv8QUKT8Psah1Mk0oOiEkMGhJfQ70nX6fncBLbhlRih-w
+URL: https://script.google.com/macros/s/AKfycbwdlt7Sl5Xq1gSLb4ZmxDcBpUv8QUKT8Psah1Mk0oOiEkMGhJfQ70nX6fncBLbhlRih-w/exec
+*/
 })();

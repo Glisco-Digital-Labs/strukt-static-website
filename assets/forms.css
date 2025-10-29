@@ -1,0 +1,23 @@
+.py-contact-form .form-field input {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    width: 300px;
+    background-color: var(--brand-white);
+    border: none;
+}
+
+.py-contact-form button {
+    background-color: var(--brand-primary);
+    color: var(--brand-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.py-contact-form button:hover {
+    cursor: pointer;
+}

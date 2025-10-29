@@ -1,5 +1,6 @@
 /* ===== Base hero container ===== */
-.hero {
+.hero,
+.hero-inner {
   position: relative;
   display: grid;         /* lets you center text later if needed */
   overflow: hidden;      /* crop any overflow from the image */
@@ -65,7 +66,7 @@
 .hero-content h1 {
     font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
     font-weight: 900;
-    font-size: clamp(4rem, 4.2vw, 8rem);
+    font-size: clamp(4rem, 4vw, 8rem);
     line-height: 1.1;
     letter-spacing: -0.01em;
     margin: 0 0 0.5rem 0;
@@ -73,67 +74,56 @@
     /* text-shadow: 0 2px 16px rgba(0,0,0,.35); */
 }
 
+.hero-inner .hero-content .cell.main {
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem calc((100vw - var(--maxw))/2);
+  align-items: baseline;
+}
+.hero-inner .hero-content h1 {
+    color: #111;
+    font-size: clamp(3rem, 3.2vw, 6rem);
+    text-align: left;
+    /* text-transform: unset; */
+}
+
+.hero-inner .hero-content .hero-subtitle {
+  color: #111;
+  font-family: "Inter", sans-serif;
+  text-align: left;
+  font-size: clamp(1.4rem, 1.8vw, 2rem);
+  line-height: 1.15;
+  padding: 1rem 0;
+  font-weight: 300;
+}
+
+.hero-inner .hero-content .hero-subtitle em {
+  color: var(--brand-primary);
+  font-style: normal;
+}
+
+.hero-inner .hero-content .eyebrow {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
 .hero-content .sub {
     font-size: clamp(1.4rem, 2.4vw, 2.2rem);
     margin: 0;
 }
 
+.hero-content .hero-cta {
+    align-self: flex-end;
+}
+
 .hero-content .hero-cta .btn {
-    background-color: var(--brand-white);
-    opacity: 0.8;
-    color: var(--brand-primary);
+    background-color:white;
+    color: black;
     border: none;
 }
 
-.hero.product {
-  height: auto;
-  display: flex;
-  flex-direction: column-reverse;
 
-}
-
-.hero.product .hero-media {
-  position: unset;
-}
-
-.hero.product .hero-media .hero-image {
-  position: unset;
-  transform: none;
-}
-
-.hero.product .hero-media .hero-image img {
-  border-radius: 10px;
-  position: unset;
-  transform: none;
-}
-
-.hero.product .hero-content {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  flex-direction: row;
-  text-align: left;
-  margin: 0 !important;
-  gap: 1rem;  
-}
-
-.hero.product .hero-content h1 {
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin: 0 0 0.5rem 0;
-  color: black;
-  text-shadow: none;
-  min-width: 40%;
-}
-
-.hero.product .hero-content .sub {
-  color: black;
-  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-  margin: 0 0 0 2rem;
-  text-align: right;
-} 
-
-.hero-grid {
+.hero .hero-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
@@ -141,6 +131,22 @@
   "c1 c2 c3"
   "main c5 c6"
   "main c8 promo";
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-inner .hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+  grid-template-areas:
+  "main main c3"
+  "c4 c5 c6"
+  "c7 c8 metadata";
   width: 100%;
   height: 100vh; /* full viewport height */
   background-image: url('/images/hero-bg.jpg');
@@ -174,7 +180,7 @@
 }
 
 /* Example: highlight content cells */
-.hero-grid .c4 h1 {
+.hero .hero-grid .c4 h1 {
   font-size: clamp(2rem, 6vw, 5rem);
   font-weight: 900;
   text-align: left;
@@ -192,13 +198,13 @@
   margin-right: 1rem;
 }
 
-.cell.c4,
-.cell.c7 {
+.hero .cell.c4,
+.hero .cell.c7 {
   background-color: #fff;
   color: #111;
 }
 
-.cell.c7 {
+.hero .cell.c7 {
     align-items: start;
     padding-left: 1.5rem;
 }
@@ -207,12 +213,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: var(--brand-primary);
+  /* background-color: var(--brand-primary); */
+  background-color:rgba(255, 92, 0, 0.85);
   /* background-color: #111; */
   color: #eee;
   padding: 1rem 2rem;
 }
 
+.hero .hero-text.small h1,
 .hero .lede {
     font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
     font-weight: 500;
@@ -222,6 +230,11 @@
     text-align: left;
     width: clamp(5rem, 30vw, 40rem);
     margin-top: 4rem;
+}
+
+.hero .hero-text.small h1 {
+    text-transform: unset !important;
+    float: left;
 }
 
 .lede em {
@@ -237,6 +250,17 @@
   font-size: clamp(1rem, 2.2vw, 4rem);
 }
 
+.hero .hero-text .eyebrow {
+    font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 4.2vw, 8rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+
+}
+
 .featured-content-header {
     font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
     font-weight: 500;
@@ -244,9 +268,12 @@
     line-height: 1.1;
     letter-spacing: -0.01em;
     text-align: left;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 .featured-content-body {
+    width: 100%;
     font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
     font-weight: 400;
     font-size: clamp(1.1rem, 1.25vw, 2.5rem);
@@ -255,6 +282,40 @@
     text-align: left;
 }
 
+
+.toc {
+  counter-reset: section; /* initialise the counter */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* optional spacing */
+  margin-top: 1rem;
+}
+
+.toc-entry {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  position: relative;
+  padding-left: clamp(2rem, 5.75vw, 6rem); /* space for the number */
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 2rem);
+  cursor: pointer;
+  line-height: 1.25;
+}
+
+.toc-entry::before {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: clamp(1rem, 2vw, 2rem);
+  counter-increment: section;
+  content: "0" counter(section) " → ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* color: var(--brand-orange, #FF5C00); */
+  letter-spacing: 0.05em;
+}
+
+.toc-entry a {
+  text-decoration: none;
+}
 
 /* .hero.product .hero-media .hero-image img {
   object-position: unset;

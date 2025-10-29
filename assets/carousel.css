@@ -1,0 +1,88 @@
+.logo-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;           /* Contain animation overflow */
+  /* background-color: rgba(0,0,0,0.25); */
+  min-height: 10rem;
+}
+
+.logo-carousel-inner {
+  width: 100%;
+  overflow: hidden;           /* Prevents child from forcing parent wider */
+  position: relative;
+  height: 10rem;
+}
+
+.logo-track {
+  display: flex;
+  position: absolute;         /* 💡 take it out of normal flow */
+  left: 0;
+  transform: translateY(50%);
+  animation: scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.logo-wrapper {
+  height: 60px;
+  width: auto;
+  margin: 0 3rem;
+  /* filter: grayscale(100%) opacity(0.5); */
+  flex-shrink: 0;
+  /* background-color: tomato; */
+}
+
+.logo-wrapper img {
+    height: 100%;
+    width: auto;
+    filter: grayscale();
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes scroll {
+  from { transform: translate(0, 50%); }
+  to   { transform: translate(-50%, 50%); }
+}
+
+   
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--timeline-gap);
+      padding: 0 1rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--grid);
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .node {
+      flex: 1;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--brand-primary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      backdrop-filter: blur(2px);
+      text-align: center;
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+
+    .node:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+    }

@@ -4,15 +4,9 @@
   color: var(black);
 
 }
-.section h2 {
-  /* font-size: clamp(1.75rem, 3.5vw, 4.6rem); */
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-block-end: 0px;
-  background-color: #111;
-  color: white;
-  max-width: 33%;
-  padding-left: 1rem;
+
+section.last {
+  margin-bottom: 0;
 }
 
 .section.emphated h2 {
@@ -76,7 +70,7 @@ section.rounded {
 }
 
 section.airy {
-  margin: 3rem 0;
+  margin: clamp(2rem, 15vw, 10rem) auto;
 }
 
 section.left-align > * {
@@ -92,6 +86,40 @@ section.h3grid .section-body{
   /* border-top: 2px solid #111; */
   /* padding-top: 15px; */
   min-height: 27.5rem;
+}
+
+section header.section-head {
+      /* text-align: center; */
+      /* max-width: 800px; */
+      padding-right: clamp(2rem, 33vw, 500px);
+      margin: 0 auto;
+    }
+
+section .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .85rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin: .5rem 0 1rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-transform: lowercase;
+}
+
+section .lede {
+  color: var(--muted);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 300;
+  width: unset;
+  margin-top: unset;
+  /* text-transform: lowercase; */
 }
 
 .inverted-primary h2,

@@ -62,6 +62,7 @@
   margin-bottom: 0.4rem;
   font-size:1.4rem;
   font-weight: 600;
+  text-transform: lowercase;
   /* font-style: italic; */
 
 }
@@ -75,31 +76,42 @@
     display: contents;
 }
 
+.card .card-content .card-body a {
+    text-decoration: underline;
+    color: var(--brand-primary);
+}
 .card .card-content > *  {
     margin: 0.5rem 0;
 }
 
 .card .card-cta {
-    padding: 1rem 1.1rem;
-    align-self: center;
+    padding: 0;
+    /* align-self: center; */
     text-align: left;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
     font-style: normal;
     font-size: 1.1rem;
-    border: none;
-    position: absolute;
-    right: 0;
+    /* position: absolute; */
+    /* right: 0; */
 }
 .card .card-cta .btn {
     /* background-color: var(--brand-primary); */
-    color: var(--brand-white);
+    padding: 0.5rem 0;
+    color: var(--brand-primary);
     border: none;
+    text-decoration: none;
+}
+
+.card .card-cta .btn::after {
+    content: '→';
+    margin-left: 0.5rem;
+    font-weight: bold;
 }
 
 .card .card-cta .btn:hover {
-    /* background-color: var(--brand-secondary); */
-    color: var(--brand-white);
+    /* color: var(--brand-white); */
+    font-weight: 600;
 }
 
 .card.tiny {

@@ -505,6 +505,12 @@ section > h2{margin-top:0.6rem}
   background: #ddd;
 }
 
+.cky-btn-revisit-wrapper {
+  background-color: #111 !important;
+  left: unset !important;
+  right: 15px !important;
+
+}
 
 @media (max-width: 600px) {
   .wrap {

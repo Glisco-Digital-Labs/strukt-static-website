@@ -166,7 +166,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.2);
+  /* background: rgba(0,0,0,0.2); */
   z-index: 0;
 }
 
@@ -362,6 +362,9 @@
     min-height: 70vh; /* optional */
   }
 
+  .hero-inner .hero-content {
+    height: 100vh;
+  }
 
   .hero-inner .hero-content .cell.main {
     max-width: 100%;

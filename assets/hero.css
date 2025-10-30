@@ -79,10 +79,11 @@
   justify-content: space-evenly;
   padding: 2rem calc((100vw - var(--maxw))/2);
   align-items: baseline;
+  max-width: 66.66666vw;
 }
 .hero-inner .hero-content h1 {
     color: #111;
-    font-size: clamp(3rem, 3.2vw, 6rem);
+    font-size: clamp(2rem, 3.2vw, 6rem);
     text-align: left;
     /* text-transform: unset; */
 }
@@ -177,6 +178,7 @@
   border: 1px solid rgba(255,255,255,0.1); /* optional grid visibility */
   z-index: 1; /* above overlay */
   color: white;
+  max-width: 33.33333vw;
 }
 
 /* Example: highlight content cells */
@@ -264,8 +266,8 @@
 .featured-content-header {
     font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
     font-weight: 500;
-    font-size: clamp(1rem, 2.2vw, 4rem);
-    line-height: 1.1;
+    font-size: clamp(1.2rem, 2.2vw, 4rem);
+    line-height: 1.2;
     letter-spacing: -0.01em;
     text-align: left;
     text-transform: uppercase;
@@ -278,6 +280,7 @@
     font-weight: 400;
     font-size: clamp(1.1rem, 1.25vw, 2.5rem);
     line-height: 1.3;
+    padding: 1rem 0;
     letter-spacing: 0; 
     text-align: left;
 }
@@ -334,8 +337,106 @@
   }
 }
 
-/* ===== Mobile / up to 850px ===== */
 @media (max-width: 850px) {
+  .hero .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "main"
+      "promo"
+      "filler";
+    height: auto; /* <-- important, don’t force 100vh on mobile */
+    min-height: 70vh; /* optional */
+  }
+
+  .hero-inner .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "main"
+      "."
+      "."
+      "."
+      "promo";
+    height: auto; /* <-- important, don’t force 100vh on mobile */
+    min-height: 70vh; /* optional */
+  }
+
+
+  .hero-inner .hero-content .cell.main {
+    max-width: 100%;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .hero-inner .hero-content .cell.c9 {
+    display: none;
+  }
+
+  .hero .hero-main-wrapper {
+    width: 100%;
+    padding: 24rem 0 4rem 0;
+  }
+
+  /* main content must stretch */
+  .hero .hero-grid .cell {
+    max-width: 100%; /* override your 33vw cap */
+    border: none;    /* optional, to make it less “framed” on mobile */
+  }
+
+  .hero .cell.c4,
+  .hero .cell.c7,
+  .hero .cell.main {
+    background: rgba(0,0,0,.35); /* or white if you want a card */
+  }
+
+  .cell.c9 {
+    order: 2; /* visually comes after text */
+  }
+
+  .hero .hero-text .eyebrow {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    color: white;
+    
+  }
+  .hero .hero-text.small h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1.5rem;
+    float: none;
+  }
+
+  .hero .lede {
+    font-size: 80%;
+    display: block;
+    margin-top: .75rem;
+    width: 90%;
+    color: white;
+    font-weight: 400;
+  }
+
+  .hero .lede em {
+    color: white;
+  }
+
+  .hero-inner .hero-grid .cell:not(.main),
+  .hero .hero-grid .cell:not(.main):not(.c9) {
+    display: none;
+  }
+
+  .hero .hero-grid {
+    grid-template-areas:
+      "main"
+      "c9";
+  }
+}
+
+
+/* ===== Mobile / up to 850px ===== */
+@media (max-width: 600px) {
+
   .hero.product {
     /* Full width, max-height = 70vh as requested */
     height: auto;
@@ -352,11 +453,19 @@
        you want centered in the viewport (e.g., 60%).
        We translate the image left by that same percentage of its own width,
        aligning that vertical axis with the container center. */
-    --focal-x: 50%;
+    --focal-x: 70%;
 
     /* translateX uses the image’s own width as reference, so this is stable
        across all viewport widths. */
+    transform: translate(calc(-1 * var(--focal-x)), -10%);
+  }
+
+  .hero .hero-image-img {
     transform: translate(calc(-1 * var(--focal-x)), -50%);
+  }
+
+  .hero-inner .hero-image-img {
+    transform: translate(calc(-1 * var(--focal-x)), -10%);
   }
 
   .hero.product .hero-image-img {
@@ -364,9 +473,7 @@
     height: auto;
   }
 
-  .hero.product .hero-content {
-    /* grid-template-columns: none;
-    grid-template-rows: 2fr 5fr; */
+  /* .hero.product .hero-content {
     display: flex;
     flex-direction: column;
   }
@@ -375,5 +482,39 @@
     margin: 0;
     text-align: left;
   }
+
+  .featured-content-body,
+  .hero-cta {
+    display: none;
+  }
+
+  .hero-text.small h1 {
+    padding-left: 4rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .hero-text.small h1 .lede, 
+  .hero-text.small h1 em {
+    color: white;
+  }
+
+  .hero .cell.c4, .hero .cell.c7 {
+    background: none;
+  }
+
+  .hero .cell.c9 {
+    padding: 0rem 1rem;
+  }
+
+  .hero .hero-text .eyebrow  {
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    color: white;
+    padding-left: 4rem;
+  }
+
+  .hero .hero-text.small h1 {
+    width: 66vw;
+  } */
 }
 

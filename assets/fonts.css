@@ -69,8 +69,8 @@
   /* font-family: 'Guggenheim', 'Helvetica Neue', sans-serif; */
   font-weight: 900;
   font-style: normal;
-  font-size: clamp(2rem, 6vw, 5rem);
-  line-height: clamp(2rem, 6vw, 5rem);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: clamp(2.9rem, 5.2vw, 5.5rem);
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
@@ -80,12 +80,12 @@
   /* font-family: "Special Gothic Expanded One", sans-serif; */
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  line-height: 3.3rem;
+  font-size: clamp(1.75rem, 4vw, 4.5rem);
+  line-height: 1;
   max-width: 75%;
   justify-self: right;
   text-align: right;
-  margin-top: 3rem;
+  margin-top: clamp(1rem, 3vw, 4rem);
   color: var(--brand-primary);
   text-transform: lowercase;
 }
@@ -157,4 +157,10 @@
 
 .dark-text {
     color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .positioning {
+    max-width: 90%;
+  }
 }

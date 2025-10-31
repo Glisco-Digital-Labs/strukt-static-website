@@ -46,6 +46,10 @@
   transform: translate(-50%, -50%);
 }
 
+.hero-image img {
+  filter: grayscale();
+}
+
 .hero-overlay {
   position: relative;
   inset: 0;

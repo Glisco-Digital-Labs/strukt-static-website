@@ -163,4 +163,9 @@
   .positioning {
     max-width: 90%;
   }
+
+  .positioning.airy {
+    padding: 1.5rem 0 2.5rem 0;
+    /* margin-bottom: 2.5rem; */
+  }
 }

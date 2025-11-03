@@ -200,15 +200,16 @@
         <div class="eyebrow">Your move. We're ready.</div>
         <h2>Get in touch</h2>
         <p class="lede">
-          Big plans start with small conversations. Tell us about your goals, what’s in your way, or where you want to go — we’ll help you shape the next step.
+          Big plans start with small conversations. Apply to this role below. 
         </p>
         <py-contact-form 
           fields="name, company, title, email" 
           labels='{"name":"Your name","company":"Your company","title":"Job title","email":"Work email"}'
           origin="vacancy-uxui"
           title="Reach out to start a conversation"
-          success-msg="Thanks for reaching out! We'll get back to you soon."
+          success-msg="Thanks for reaching out! We review every application personally and will reach out to continue the conversation if it feels like a good fit."
           error-msg="Sorry, something went wrong. Please try again later.">
+          <input type="hidden" name="reason" value="ux-analyst-application">
         </py-contact-form>
       </div>
     </section>

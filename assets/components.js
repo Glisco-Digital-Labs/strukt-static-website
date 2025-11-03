@@ -662,9 +662,14 @@
     const encoded = this.getAttribute('data-endpoint') || 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3ZGx0N1NsNVhxMWdTTGI0Wm14RGNCcFV2OFFVS1Q4UHNhaDFNazBvT2lFa01HaEpmUTcwblg2Zm5jQkxiaGxSaWgtdy9leGVj';
     const endpoint = atob(encoded.trim());
     const title = this.getAttribute('title') || 'Contact Us';
+    const body = this.innerHTML.trim();
+    const className = this.getAttribute('style') || '';
     const cta = this.getAttribute('cta') || 'Send';
     const successMsg = this.getAttribute('success-msg') || 'Thanks — message sent!';
     const errorMsg = this.getAttribute('error-msg') || 'Sorry, something went wrong.';
+    const redirectUrlEncoded = this.getAttribute('redirect-url') || "";
+    const redirectEndpoint = atob(redirectUrlEncoded.trim());
+    const enableRedirection = redirectEndpoint.length > 0 ? "enabled" : "disabled";
 
     // Fields (comma-separated list)
     const fields = (this.getAttribute('fields') || 'name,email,message')
@@ -687,11 +692,15 @@
     }).join('');
 
     this.innerHTML = `
-      <form class="py-contact-form">
+      <form class="py-contact-form ${className}" data-active="true">
         ${title ? `<h3>${title}</h3>` : ''}
         ${inputs}
+        ${body}
         <button type="submit" class="btn">${cta}</button>
         <p class="form-status" aria-live="polite"></p>
+        <div class="redirection ${enableRedirection}">
+          <a href="${redirectEndpoint}">${cta}</a>
+        </div>
       </form>
     `;
 
@@ -701,6 +710,7 @@
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form));
+      console.log(`SENDING DATA: `, data);
       status.textContent = 'Sending…';
 
       try {
@@ -712,6 +722,7 @@
         if (res.ok) {
           form.reset();
           status.textContent = successMsg;
+          form.dataset.active = "false";   // sets data-active="false"
         } else throw new Error('Network error');
       } catch (err) {
         console.error(err);
@@ -723,8 +734,62 @@
 
 customElements.define('py-contact-form', PYContactForm);
 
-/*
-Deployment ID: AKfycbwdlt7Sl5Xq1gSLb4ZmxDcBpUv8QUKT8Psah1Mk0oOiEkMGhJfQ70nX6fncBLbhlRih-w
-URL: https://script.google.com/macros/s/AKfycbwdlt7Sl5Xq1gSLb4ZmxDcBpUv8QUKT8Psah1Mk0oOiEkMGhJfQ70nX6fncBLbhlRih-w/exec
-*/
+// Dropdown
+class PYDropdown extends HTMLElement {
+  connectedCallback() {
+    if (this.dataset.upgraded === '1') return;
+    this.dataset.upgraded = '1';
+
+    const label = this.getAttribute('label') || 'Select an option';
+
+    const options = Array.from(this.querySelectorAll('option')).map(opt => ({
+      value: opt.value,
+      title: opt.getAttribute('title') || opt.textContent.trim(),
+      description: opt.getAttribute('description') || ''
+    }));
+
+    this.innerHTML = `
+      <div class="py-dropdown">
+        <button class="dropdown-toggle" type="button" aria-expanded="false">${label}</button>
+        <ul class="dropdown-list" hidden>
+          ${options.map(opt => `
+            <li data-value="${opt.value}">
+              <h4>${opt.title}</h4>
+              ${opt.description ? `<p>${opt.description}</p>` : ''}
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    `;
+
+    const toggle = this.querySelector('.dropdown-toggle');
+    const list = this.querySelector('.dropdown-list');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      list.hidden = expanded;
+    });
+
+    list.addEventListener('click', (e) => {
+      const item = e.target.closest('li[data-value]');
+      if (!item) return;
+      const value = item.dataset.value;
+      toggle.textContent = item.querySelector('h4').textContent;
+      list.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      this.dataset.value = value;
+      this.dispatchEvent(new CustomEvent('change', { detail: { value } }));
+      const affectedFieldName = this.dataset.field || 'reason';
+
+      const form = this.closest('form');
+      if (form) {
+        const affectedField = form.querySelector(`[name="${affectedFieldName}"]`);
+        if (affectedField) affectedField.value = value;
+      }
+    });
+  }
+}
+customElements.define('py-dropdown', PYDropdown);
+
 })();

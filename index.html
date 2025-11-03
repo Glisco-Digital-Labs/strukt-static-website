@@ -160,7 +160,7 @@
             From fundations to human augmentation. A practical framework for leaders who want to modernize 
             without losing control. Explore how structure and strategy can restore clarity in a noisy digital world.
           </p>
-          <div class="cta"><a href="/whitepaper.pdf" class="button alt">Download the White Paper →</a></div>
+          <div class="cta"><a href="/products/impactful-ai.html" class="button alt">Download the White Paper →</a></div>
           
         </div>
       </section>
@@ -199,6 +199,51 @@
         </div>
       </py-section >
     
+      <section class="insight-banner careers">
+        <div class="container">
+          <div class="eyebrow">Careers at Struktigen</div>
+          <h2>Human by Design</h2>
+          <p class="lede">
+            Join a studio where design, architecture, and engineering meet. We build digital systems that think, connect, and evolve — and we do it with structure, creativity, and respect for the people behind them.
+          </p>
+          <div class="cta"><a href="/careers/" class="button alt">Explore open roles →</a></div>
+          
+        </div>
+      </section>
+
+      <!-- PHILOSOPHY -->
+      <py-section 
+        style="wrap"
+        eyebrow="What We Stand For"
+        title="Our Philosophy"
+        lede="Our work is grounded in three principles that shape how we think, build, and partner with clients."
+        style="h3grid nowrap"
+        id="philosophy">
+
+        <py-grid style="airy">
+          <py-card 
+            title="Clarity"
+            subtitle="Understanding precedes progress. We uncover the underlying logic of your organization so every decision, design, and system emerges from shared purpose rather than noise."
+            image="/assets/img/ai-infra.jpg"></py-card>
+
+          <py-card 
+            title="Structure"
+            subtitle="Vision needs form. We design the architectures that connect people, process, and technology — transforming abstract strategy into living systems built to adapt."
+            image="/assets/img/fabrikos.jpg"></py-card>
+
+          <py-card 
+            title="Acceleration"
+            subtitle="The world rewards those who learn faster. We create digital foundations that evolve through feedback and intelligence, turning improvement into a continuous habit."
+            image="/assets/img/hero3-executive-team-1.jpg"></py-card>
+        </py-grid>
+
+        <div class="positioning airy">
+          Every transformation starts with a clear conversation. 
+          Tell us where you want to go — we’ll help you shape the path.
+        </div>
+
+      </py-section>
+
       <section class="insight-banner last businessman">
         <div class="container">
           <div class="eyebrow">Your move. We're ready.</div>
@@ -214,9 +259,33 @@
               origin="homepage"
               title="Reach out to start a conversation"
               success-msg="Thanks for reaching out! We'll get back to you soon."
-              error-msg="Sorry, something went wrong. Please try again later."/>
+              error-msg="Sorry, something went wrong. Please try again later.">
+
+              <input type="hidden" name="reason" value="">
+              
+              <py-dropdown label="Reason for getting in touch" data-field="reason">
+                <option value="transformation" title="Exploring digital transformation"
+                  description="Strategic conversations about structure, systems, and future growth."></option>
+
+                <option value="systems" title="Building smarter systems"
+                  description="AI, automation, and data-driven solutions."></option>
+
+                <option value="interfaces" title="Designing better interfaces"
+                  description="UX and experience design discussions."></option>
+
+                <option value="products" title="Learning about our products"
+                  description="FabrikOS, Reaktor, Calkulator, and others."></option>
+
+                <option value="press" title="Media or partnership inquiry"
+                  description="Press, collaboration, or speaking requests."></option>
+
+                <option value="other" title="Something else / just getting in touch"
+                  description="If none of the above quite fits."></option>
+              </py-dropdown>
+            </py-contact-form>
         </div>
       </section>
+
   </main>
 
   <py-footer>

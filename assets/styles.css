@@ -445,9 +445,31 @@ section > h2{margin-top:0.6rem}
       background: color-mix(in srgb, var(--accent), #000 20%);
     }
 
+.positioning .button.inverse {
+  background-color: var(--brand-primary);
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  margin: 3rem 0;
+  font-size: 2.5rem;
+}
+
+.positioning .button.inverse.download::after {
+  content: "⇤";
+  display: inline-block;
+  transform: rotate(-90deg); /* flips it vertically */
+  margin-left: 0.5rem;
+  font-size: 0.9em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.positioning .button.inverse:hover {
+  text-decoration: underline;
+}
 
 .insight-banner {
-  background: url("/assets/img/aifemale.jpg");
+  background: url("/assets/img/ai-hand-highlight.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -463,6 +485,13 @@ section > h2{margin-top:0.6rem}
 .insight-banner.businessman {
   background: url("/assets/img/businessman-london.jpg");
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.insight-banner.careers {
+  background: url("/assets/img/careers-highlight-bg.jpg");
+  background-position: 60%;
   background-size: cover;
   background-repeat: no-repeat;
 }

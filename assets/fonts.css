@@ -159,6 +159,10 @@
     color: var(--text);
 }
 
+p.padded-vertical {
+  padding: 5rem 0;
+}
+
 @media (max-width: 600px) {
   .positioning {
     max-width: 90%;

@@ -66,6 +66,7 @@ nav.site a:hover{background:rgba(127,127,127,.12)}
   margin: 4px 0;
   background: currentColor; /* inherits text color */
   border-radius: 1px;
+  color: #111;
 }
 
 /* ===== Mobile: <768px ===== */

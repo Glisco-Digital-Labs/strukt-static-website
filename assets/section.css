@@ -166,4 +166,11 @@ section.left-align > * {
   section .eyebrow {
     font-size: 0.75rem;
   }
+
+  .section-body.h3grid, 
+  section.h3grid .section-body{
+  /* border-top: 2px solid #111; */
+  /* padding-top: 15px; */
+  min-height: unset;
+}
 }

@@ -258,11 +258,12 @@
               labels='{"name":"Your name","company":"Your company","title":"Job title","email":"Work email"}'
               origin="homepage"
               title="Reach out to start a conversation"
+              data-endpoint="/submit"
               success-msg="Thanks for reaching out! We'll get back to you soon."
               error-msg="Sorry, something went wrong. Please try again later.">
 
               <input type="hidden" name="reason" value="">
-              
+
               <py-dropdown label="Reason for getting in touch" data-field="reason">
                 <option value="transformation" title="Exploring digital transformation"
                   description="Strategic conversations about structure, systems, and future growth."></option>

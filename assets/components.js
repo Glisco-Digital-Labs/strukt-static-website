@@ -284,9 +284,10 @@
       const style = "card " + (this.getAttribute('style') || 'ystack'); // one of ['ystack', 'xstack', 'zstack']
       const href  = this.getAttribute('href')  || null;
       const btn   = this.getAttribute('button-label') || '';
+      const btnStyle   = this.getAttribute('button-style') || '';
       const body  = this.innerHTML.trim();
       const linkAndCta = href ? `<div class="card-cta">
-              <a class="btn" href="${href}" aria-label="${title ? `Abrir ${title}` : ''}">${btn}</a>
+              <a class="btn ${btnStyle}" href="${href}" aria-label="${title ? `Abrir ${title}` : ''}">${btn}</a>
             </div>` : "";
       this.innerHTML = `
         <article class="${style}">

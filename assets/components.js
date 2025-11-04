@@ -46,7 +46,7 @@
           <div class="wrap">
               <div class="copyright">© <span data-year></span> struktigen. we build systems that think – and help you think.</div>
               <!-- <div class="contacts">Follow us on Instagram [<a href="https://www.instagram.com/strukt.digital/" target="new">@strukt.digital</a>] or LinkedIn [<a href="https://www.linkedin.com/strukt.digital/" target="new">@strukt.digital</a>]</div> -->
-              <div class=""><em>Caution</em>: engaging us comes with the risk of shaping a compelling future — structured, scalable, and beautifully designed. Do it now — or regret it later.</div>
+              <div class=""><em>Caution</em>: engaging us comes with the risk of shaping a compelling future — structured, scalable, and beautifully designed. Do it now — your future will thank you.</div>
               <div class="custom-content">${content}</div>
           </div>
         </footer>

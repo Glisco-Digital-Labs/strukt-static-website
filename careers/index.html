@@ -199,13 +199,14 @@
           Tell us about your talents, goals, or creative ambitions. We believe every meaningful collaboration starts with a conversation — not a job title.
         </p>
         <py-contact-form 
-          fields="name, email, title" 
-          labels='{"name":"Your name","email":"Your email","title":"Your role or area"}'
+          fields="name, email, title, phone" 
+          labels='{"name":"Your name","email":"Your email","title":"Your role or area", "phone":"Phone No"}'
           origin="vacancies"
           title="Reach out to start a conversation"
           data-endpoint="L3N1Ym1pdA=="
           success-msg="Thanks for reaching out! We'll get back to you soon."
           error-msg="Sorry, something went wrong. Please try again later.">
+          <input type="hidden" name="reason" value="open-careers-application">
         </py-contact-form>
       </div>
     </section>

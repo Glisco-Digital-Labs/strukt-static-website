@@ -13,6 +13,7 @@ header.site .wrap {
   justify-content: space-between;
   gap: 1rem;
   position: relative; /* for the mobile panel positioning */
+
 }
 
 header.site .logo {
@@ -69,6 +70,36 @@ nav.site a:hover{background:rgba(127,127,127,.12)}
 
 /* ===== Mobile: <768px ===== */
 @media (max-width: 767px) {
+  /* --- Safari flex fix --- */
+  header.site .wrap {
+    flex-wrap: nowrap;          /* force one row */
+    -webkit-flex-wrap: nowrap;  /* iOS Safari prefix */
+    -webkit-align-items: center;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Make the brand block stop expanding past available space */
+  header.site .brand {
+    flex: 0 1 auto;
+    min-width: 0;               /* critical for iOS Safari flex shrink */
+  }
+
+  /* Likewise keep the nav-toggle from forcing a wrap */
+  header.site .nav-toggle {
+    flex: 0 0 auto;
+  }
+
+  /* Prevent the logo image from expanding the flex line */
+  header.site .logo img {
+    display: block;
+    height: auto;
+    max-height: 50px;
+    width: auto;
+    max-width: 100%;
+  }
+
   .nav-toggle { 
     display: inline-flex;
     flex-direction: column;

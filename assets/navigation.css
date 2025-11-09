@@ -39,7 +39,8 @@ nav.site a:hover{background:rgba(127,127,127,.12)}
 .primary-nav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  /* gap: 1.25rem; */
+  gap: clamp(1.15rem, 1.5vw, 2rem);
 }
 
 .primary-nav a {
@@ -69,6 +70,9 @@ nav.site a:hover{background:rgba(127,127,127,.12)}
   color: #111;
 }
 
+header.site .logo a {
+  text-decoration: none;
+}
 /* ===== Mobile: <768px ===== */
 @media (max-width: 767px) {
   /* --- Safari flex fix --- */

@@ -13,9 +13,11 @@
           <div class="wrap">
             <div class="brand">
               <!-- <h1><a href="/">${title}</a></h1> -->
-              <div class="logo">
-                <img src="/assets/img/logo/struktigen-logo-horizontal.svg" alt="struktigen logo"/>
-              </div>
+              <a href="/">
+                <div class="logo">
+                  <img src="/assets/img/logo/struktigen-logo-horizontal.svg" alt="struktigen logo"/>
+                </div>
+              </a>
               ${subtitle ? `<p class="sub">${subtitle}</p>` : ''}
             </div>
             <!-- Burger button (shown <768px) -->

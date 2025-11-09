@@ -330,4 +330,9 @@
     .grid.mobile-greedy .card.tiny  {
         margin: 1rem;
     }
+
+    .card .card-content .sub {
+      color: #444;
+      left: 1.2;
+    }
 }

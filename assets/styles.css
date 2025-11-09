@@ -451,7 +451,7 @@ section > h2{margin-top:0.6rem}
   text-decoration: none;
   padding: 1rem;
   margin: 3rem 0;
-  font-size: 2.5rem;
+  font-size: clamp(1.25rem, 2.75vw, 2.5rem);
 }
 
 .positioning .button.inverse.download::after {

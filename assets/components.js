@@ -190,9 +190,6 @@
               <div class="cell c8">
               </div>
               <div class="cell c9">
-                <div class="featured-content-header">
-                  Think better. <br/>Build smarter.
-                </div>
                 <div class="featured-content-body">
                   ${featuredContent}
                 </div>

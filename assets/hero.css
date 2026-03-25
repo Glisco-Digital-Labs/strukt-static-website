@@ -220,7 +220,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   /* background-color: var(--brand-primary); */
-  background-color:rgba(255, 92, 0, 0.85);
+  background-color: var(--brand-primary);
+  background-color: color-mix(in srgb, var(--brand-primary) 85%, transparent);
   /* background-color: #111; */
   color: #eee;
   padding: 1rem 2rem;

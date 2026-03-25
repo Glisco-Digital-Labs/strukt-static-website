@@ -79,6 +79,7 @@
 .card .card-content .card-body a {
     text-decoration: underline;
     color: var(--brand-primary);
+;
 }
 .card .card-content > *  {
     margin: 0.5rem 0;

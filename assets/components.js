@@ -142,7 +142,7 @@
       const eyebrow   = this.getAttribute('eyebrow') || 'Discipline.<br/>Design.<br/>Freedom.';
       const title     = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
       const subtitle  = this.getAttribute('subtitle') || '';
-      const lede      = this.getAttribute('lede') || 'We build systems that think — not to replace human intelligence, but to amplify it.';
+      const lede      = this.getAttribute('lede') || '';
       const ctaText   = this.getAttribute('cta-text') || '';
       const ctaLink   = this.getAttribute('cta-link') || '#';
       const featuredContent = this.getAttribute('featured-content') || '';

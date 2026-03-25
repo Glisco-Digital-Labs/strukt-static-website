@@ -1,31 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="136" viewBox="0 0 500 136">
-    <rect width="500" height="136" fill="none"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2226.67 636.44">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #111;
+      }
 
-    <!-- Icon: 3x3 grid -->
-    <g id="icon" transform="translate(0,0)">
-    <!-- row 1 -->
-    <rect x="0"   y="0"   width="40" height="40" fill="#0E0E0E"/>
-    <rect x="48"  y="0"   width="40" height="40" fill="#0E0E0E"/>
-    <rect x="96"  y="0"   width="40" height="40" fill="#0E0E0E"/>
-    <!-- row 2 -->
-    <rect x="0"   y="48"  width="40" height="40" fill="#0E0E0E"/>
-    <rect x="48"  y="48"  width="40" height="40" fill="#0E0E0E"/>
-    <rect x="96"  y="48"  width="40" height="40" fill="#FF5C00"/>
-    <!-- row 3 -->
-    <rect x="0"   y="96"  width="40" height="40" fill="#0E0E0E"/>
-    <rect x="48"  y="96"  width="40" height="40" fill="#0E0E0E"/>
-    <rect x="96"  y="96"  width="40" height="40" fill="#0E0E0E"/>
-    </g>
+      .cls-2 {
+        font-family: Inter-Bold, Inter;
+        font-size: 238.84px;
+        font-variation-settings: 'wght' 700, 'slnt' 0;
+        font-weight: 700;
+      }
 
-    <!-- Wordmark -->
-    <text
-        x="170"
-        y="90"
-        font-family="Inter, Satoshi, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
-        font-size="72"
-        font-weight="500"
-        letter-spacing="0"
-        fill="#0E0E0E">
-        struktigen
-    </text>
+      .cls-3 {
+        fill: #00d79f;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(965.77 383.19)"><tspan x="0" y="0">Struktigen</tspan></text>
+  <g>
+    <path class="cls-1" d="M389.68,46.17l169.82,98.05c2.95,1.7,2.95,5.96,0,7.67l-349.37,201.72c-4.18,2.41-9.32,2.41-13.5,0L28.63,256.6c-2.95-1.7-2.95-5.96,0-7.67L379.82,46.17c3.05-1.76,6.81-1.76,9.86,0Z"/>
+    <path class="cls-1" d="M571.6,360.64l33.24,19.19c2.95,1.7,2.95,5.96,0,7.67l-353.91,204.34c-1.37.79-3.06.79-4.43,0l-172.54-99.61c-2.95-1.7-2.95-5.96,0-7.67l127.19-73.43c1.37-.79,3.06-.79,4.43,0l40.93,23.63c1.37.79,3.06.79,4.43,0l86.27-49.81c1.37-.79,3.06-.79,4.43,0l86.27,49.81c1.37.79,3.06.79,4.43,0l128.38-74.11c3.37-1.95,7.53-1.95,10.9,0Z"/>
+    <path class="cls-1" d="M786.23,144.22l-172.53-99.62c-1.37-.79-3.06-.79-4.43,0l-36.48,21.07c-2.95,1.7-2.95,5.96,0,7.67l122.76,70.88c2.95,1.7,2.95,5.96,0,7.67l-129.39,74.7,45.33,26.19,174.75-100.89c2.95-1.7,2.95-5.96,0-7.67Z"/>
+    <path class="cls-3" d="M611.49,252.78l-45.33-26.19h0s-174.76,100.89-174.76,100.89c-2.95,1.7-2.95,5.96,0,7.67l34.42,20.11c2.58,1.51,5.76,1.51,8.35.02l177.33-102.51Z"/>
+  </g>
 </svg>

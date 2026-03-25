@@ -15,13 +15,13 @@
   --maxw: 1320px;
   --gap: clamp(1.2rem, 5rem, 10rem);
   --radius: 14px;
-  --text: #1b1b1d;
+  --text: #111111;
   --muted: #333;
   --bg: #ffffff;
   --card: #ffffff;
   --line: #e8e8ef;
   --grid: #d9d9d9;          /* grid line color */
-  --brand-white: #f0ebdc;
+  --brand-white: #acead9;
   /* --brand-primary: #9A0013; */
   --brand-primary: #00d79f;
   --brand-primary-bg-alpha: rgba(41, 69, 101, 0.5);
@@ -56,7 +56,7 @@
   --grid-bg: #f8f9fb;
   --hour-line: #e6e8ee;
   --accent: #3b82f6;        /* podes ajustar a cor do evento */
-  --text: #0f172a;
+  --text: #111111;
   /* --muted: #64748b; */
   --radius: 10px;
 }
@@ -120,7 +120,10 @@ h2{font-size:clamp(1.2rem,3.2vw,1.6rem)}
 .btn{
   display:inline-block; text-decoration:none;
   border:1px solid var(--line);
-  padding:.55rem .85rem; 
+  border-radius: 8px;
+  padding:16px 32px;
+  font-size: 16px;
+  font-weight: 500;
 }
 .btn:hover{filter:brightness(1.05)}
 /* Footer */
@@ -143,7 +146,7 @@ section > h2{margin-top:0.6rem}
 .left-align{text-align:left;}
 .right-align{text-align:right;}
 .center{text-align:center;}
-.black-text{color:black;}
+.black-text{color:#111111;}
 .discreet {
   color: var(--muted)
 }
@@ -533,7 +536,7 @@ section > h2{margin-top:0.6rem}
 }
 .insight-banner .button.alt {
   background: #f7f7f7;
-  color: #111;
+  color: #111111;
 }
 .insight-banner .button.alt:hover {
   background: #ddd;

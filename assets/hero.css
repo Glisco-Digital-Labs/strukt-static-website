@@ -86,14 +86,15 @@
   max-width: 66.66666vw;
 }
 .hero-inner .hero-content h1 {
-    color: #111;
-    font-size: clamp(2rem, 3.2vw, 6rem);
+    color: #111111;
+    font-size: 20px;
+    font-weight: 400;
     text-align: left;
     /* text-transform: unset; */
 }
 
 .hero-inner .hero-content .hero-subtitle {
-  color: #111;
+  color: #111111;
   font-family: "Inter", sans-serif;
   text-align: left;
   font-size: clamp(1.4rem, 1.8vw, 2rem);
@@ -110,6 +111,8 @@
 .hero-inner .hero-content .eyebrow {
     text-align: left;
     margin-bottom: 1rem;
+    font-size: 48px;
+    font-weight: 700;
 }
 
 .hero-content .sub {
@@ -123,7 +126,7 @@
 
 .hero-content .hero-cta .btn {
     background-color:white;
-    color: black;
+    color: #111111;
     border: none;
 }
 
@@ -195,7 +198,7 @@
 
 .hero-grid .c9 button {
   background: white; /*white;*/
-  color: #111;
+  color: #111111;
   border: none;
   padding: 1rem 2rem;
   font-weight: 900;
@@ -207,7 +210,7 @@
 .hero .cell.c4,
 .hero .cell.c7 {
   background-color: #fff;
-  color: #111;
+  color: #111111;
 }
 
 .hero .cell.c7 {
@@ -574,6 +577,6 @@
   .hero-inner .hero-content .eyebrow,
   .hero-inner .hero-content h1,
   .hero-inner .hero-content .hero-subtitle {
-    color: #111;
+    color: #111111;
   }
 }

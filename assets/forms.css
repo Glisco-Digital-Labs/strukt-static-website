@@ -15,7 +15,7 @@
 
 .py-contact-form button {
     background-color: var(--brand-primary);
-    color: var(--brand-white);
+    color: black;
     border: none;
     font-size: 1rem;
     cursor: pointer;

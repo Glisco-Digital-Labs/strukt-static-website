@@ -82,7 +82,7 @@ body{
 
 /* Enforce Inter across the whole site, including custom elements and form controls. */
 body, body * {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .wrap{

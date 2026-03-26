@@ -34,6 +34,7 @@ nav.site a{
   border-radius:.6rem;
   font-size: 18px;
   color: #3c413c;
+  text-transform:capitalize;
 }
 nav.site a:hover{background:rgba(127,127,127,.12)}
 

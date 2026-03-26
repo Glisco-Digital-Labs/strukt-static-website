@@ -13,7 +13,7 @@
 @font-face {
   font-family: 'Guggenheim';
   src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Thin.woff2') format('woff2'),
-       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Thin.woff') format('woff');
+    url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -22,7 +22,7 @@
 @font-face {
   font-family: 'Guggenheim';
   src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Light.woff2') format('woff2'),
-       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Light.woff') format('woff');
+    url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -31,7 +31,7 @@
 @font-face {
   font-family: 'Guggenheim';
   src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Regular.woff2') format('woff2'),
-       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Regular.woff') format('woff');
+    url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -40,7 +40,7 @@
 @font-face {
   font-family: 'Guggenheim';
   src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Medium.woff2') format('woff2'),
-       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Medium.woff') format('woff');
+    url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -49,7 +49,7 @@
 @font-face {
   font-family: 'Guggenheim';
   src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Bold.woff2') format('woff2'),
-       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Bold.woff') format('woff');
+    url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -58,19 +58,19 @@
 @font-face {
   font-family: 'Guggenheim';
   src: url('/assets/fonts/guggenheim-sans/woff/GuggenheimSans-Black.woff2') format('woff2'),
-       url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Black.woff') format('woff');
+    url('/sssets/fonts/guggenheim-sans/woff/GuggenheimSans-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 .alert {
-  font-family: "Special Gothic Expanded One", sans-serif;
+  font-family: "Inter", sans-serif;
   /* font-family: 'Guggenheim', 'Helvetica Neue', sans-serif; */
   font-weight: 900;
   font-style: normal;
   font-size: clamp(3rem, 6vw, 5rem);
-  line-height: clamp(2.9rem, 5.2vw, 5.5rem);
+  line-height: clamp(2.9rem, 5.75vw, 5.5rem);
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
@@ -83,9 +83,11 @@
   font-size: clamp(1.75rem, 4vw, 4.5rem);
   line-height: 1;
   max-width: 75%;
-  margin-left: auto;      /* ✅ pushes the block to the right */
+  margin-left: auto;
+  /* ✅ pushes the block to the right */
   margin-right: 0;
-  text-align: right;      /* ✅ aligns text inside it */
+  text-align: right;
+  /* ✅ aligns text inside it */
   margin-top: clamp(1rem, 3vw, 4rem);
   color: var(--brand-primary);
   text-transform: lowercase;
@@ -157,7 +159,7 @@
 
 
 .dark-text {
-    color: var(--text);
+  color: var(--text);
 }
 
 p.padded-vertical {
@@ -172,5 +174,9 @@ p.padded-vertical {
   .positioning.airy {
     padding: 1.5rem 0 2.5rem 0;
     /* margin-bottom: 2.5rem; */
+  }
+
+  .alert {
+    margin-bottom: 3rem;
   }
 }

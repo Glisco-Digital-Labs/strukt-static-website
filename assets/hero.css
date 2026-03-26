@@ -61,19 +61,18 @@
   z-index: 1;           
   align-self: end;        
   margin-inline: auto;
-  text-align: center;
   display: flex;
   flex-direction: column; 
   gap: 2rem; 
 }
 
 .hero-content h1 {
-    font-family: 'Guggenheim', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
     font-weight: 900;
     font-size: clamp(4rem, 4vw, 8rem);
     line-height: 1.1;
     letter-spacing: -0.01em;
-    margin: 0 0 0.5rem 0;
+    margin: 0.5rem 0;
     text-transform: uppercase;
     /* text-shadow: 0 2px 16px rgba(0,0,0,.35); */
 }
@@ -87,8 +86,7 @@
 }
 .hero-inner .hero-content h1 {
     color: #111111;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: clamp(2rem, 3.2vw, 6rem);
     text-align: left;
     /* text-transform: unset; */
 }
@@ -109,10 +107,11 @@
 }
 
 .hero-inner .hero-content .eyebrow {
-    text-align: left;
-    margin-bottom: 1rem;
-    font-size: 48px;
-    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .85rem;
+    color: var(--muted);
+    font-weight: 300;
 }
 
 .hero-content .sub {
@@ -180,7 +179,7 @@
 /* Each cell */
 .hero-grid .cell {
   display: flex; /* center contents */
-  align-items: center;
+  align-items: start;
   justify-content: center;
   border: 1px solid rgba(255,255,255,0.1); /* optional grid visibility */
   z-index: 1; /* above overlay */
@@ -190,10 +189,11 @@
 
 /* Example: highlight content cells */
 .hero .hero-grid .c4 h1 {
-  font-size: clamp(2rem, 6vw, 5rem);
-  font-weight: 900;
+  font-size: clamp(2rem, 3vw, 5rem);
+  font-weight: 700;
   text-align: left;
-  margin: 0;
+  margin: 2rem 0 2rem 0;
+  margin-bottom: clamp(1.5rem, 3vw, 6rem);
 }
 
 .hero-grid .c9 button {
@@ -209,8 +209,9 @@
 
 .hero .cell.c4,
 .hero .cell.c7 {
-  background-color: #fff;
-  color: #111111;
+  background-color: #111111;
+  color: #fff;
+  padding-right: 1rem;
 }
 
 .hero .cell.c7 {
@@ -222,15 +223,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* background-color: var(--brand-primary); */
-  background-color: var(--brand-primary);
-  background-color: color-mix(in srgb, var(--brand-primary) 85%, transparent);
-  /* background-color: #111; */
   color: #eee;
   padding: 1rem 2rem;
 }
 
-.hero .hero-text.small h1,
 .hero .lede {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -396,6 +392,7 @@
 
   .hero .cell.c4,
   .hero .cell.c7,
+  .hero .cell.c9,
   .hero .cell.main {
     background: rgba(0,0,0,.35); /* or white if you want a card */
   }

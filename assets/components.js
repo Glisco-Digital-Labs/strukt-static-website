@@ -1,8 +1,8 @@
 // Lightweight Web Components for Flowen Yôga
-(function(){
+(function () {
   // Header
-  class PYHeader extends HTMLElement{
-    connectedCallback(){
+  class PYHeader extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
       const title = this.getAttribute('title') || '';
@@ -38,8 +38,8 @@
   customElements.define('py-header', PYHeader);
 
   // Footer
-  class PYFooter extends HTMLElement{
-    connectedCallback(){
+  class PYFooter extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
       const content = this.innerHTML || '';
@@ -61,8 +61,8 @@
   customElements.define('py-footer', PYFooter);
 
   // Grid
-  class PYGrid extends HTMLElement{
-    connectedCallback(){
+  class PYGrid extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
       const style = this.getAttribute('style') || '';
@@ -73,8 +73,8 @@
   customElements.define('py-grid', PYGrid);
 
   // Section
-  class PYSection extends HTMLElement{
-    connectedCallback(){
+  class PYSection extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
 
@@ -124,7 +124,7 @@
               </div>
               <div class="cta-strip-overlay" style="background: ${overlay}"></div>
             </div>` : ''
-          }
+        }
           <div class="wrap cta-strip-content">
             <h2 class="lato-regular-italic">${title}</h2>
             ${subtitle ? `<p class="sub lato-light">${subtitle}</p>` : ''}
@@ -139,22 +139,22 @@
 
   class PYHero extends HTMLElement {
     connectedCallback() {
-      const eyebrow   = this.getAttribute('eyebrow') || 'Discipline.<br/>Design.<br/>Freedom.';
-      const title     = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
-      const subtitle  = this.getAttribute('subtitle') || '';
-      const lede      = this.getAttribute('lede') || 'We build systems that think — not to replace human intelligence, but to amplify it.';
-      const ctaText   = this.getAttribute('cta-text') || '';
-      const ctaLink   = this.getAttribute('cta-link') || '#';
+      const eyebrow = this.getAttribute('eyebrow') || '';
+      const title = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
+      const subtitle = this.getAttribute('subtitle') || '';
+      const lede = this.getAttribute('lede') || '';
+      const ctaText = this.getAttribute('cta-text') || '';
+      const ctaLink = this.getAttribute('cta-link') || '#';
       const featuredContent = this.getAttribute('featured-content') || '';
-      const image     = this.getAttribute('image') || '';                 // e.g. /assets/hero.jpg
-      const style     = "hero " + (this.getAttribute('style') || '');    
-      const overlay   = this.getAttribute('overlay')                      // e.g. "rgba(0,0,0,.5)" or "linear-gradient(...)"
-                        || 'linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35))';
-      const position  = this.getAttribute('position') || 'center 30%';    // CSS background-position
-      const minH      = this.getAttribute('min-h') || '52vh';             // optional
+      const image = this.getAttribute('image') || '';                 // e.g. /assets/hero.jpg
+      const style = "hero " + (this.getAttribute('style') || '');
+      const overlay = this.getAttribute('overlay')                      // e.g. "rgba(0,0,0,.5)" or "linear-gradient(...)"
+        || 'linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35))';
+      const position = this.getAttribute('position') || 'center 30%';    // CSS background-position
+      const minH = this.getAttribute('min-h') || '52vh';             // optional
 
       const ctaContent = ctaLink ? `<a class="btn" href="${ctaLink}" aria-label="${ctaText}">${ctaText}</a>` : ctaText;
-      const cta        = ctaText ? ctaContent : '';
+      const cta = ctaText ? ctaContent : '';
 
       console.log('Hero component:', this.getAttribute('overlay') ? 'with overlay' : 'no overlay');
       // Note: no self-closing divs; keep proper open/close tags.
@@ -168,7 +168,7 @@
               </div>
               <div class="hero-overlay" style="background: ${overlay}"></div>
             </div>` : ''
-          }
+        }
           <div class="hero-content">
             <section class="hero-grid">
               <div class="cell c1"></div>
@@ -181,7 +181,10 @@
                   </div>
                   <div class="hero-text small">
                     <h1 class="hero-title">${title} <span class="lede">${lede}</span></h1>
-                  </div>    
+                      <div class="featured-content-body">
+                        ${featuredContent}
+                      </div>  
+                  </div>  
                 </div>
               </div>  
               <div class="cell c5"></div>
@@ -190,12 +193,6 @@
               <div class="cell c8">
               </div>
               <div class="cell c9">
-                <div class="featured-content-header">
-                  Think better. <br/>Build smarter.
-                </div>
-                <div class="featured-content-body">
-                  ${featuredContent}
-                </div>
                 <div class="hero-cta">${cta}</div>
               </div>
             </section>
@@ -209,24 +206,24 @@
 
   class PYInnerHero extends HTMLElement {
     connectedCallback() {
-      const eyebrow   = this.getAttribute('eyebrow') || 'Discipline.<br/>Design.<br/>Freedom.';
-      const title     = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
-      const subtitle  = this.getAttribute('subtitle') || '';
-      const lede      = this.getAttribute('lede') || 'We build systems that think — not to replace human intelligence, but to amplify it.';
-      const ctaText   = this.getAttribute('cta-text') || '';
-      const ctaLink   = this.getAttribute('cta-link') || '#';
+      const eyebrow = this.getAttribute('eyebrow') || 'Discipline.<br/>Design.<br/>Freedom.';
+      const title = this.getAttribute('title') || 'Think smarter. Build better. Struktigen.';
+      const subtitle = this.getAttribute('subtitle') || '';
+      const lede = this.getAttribute('lede') || 'We build systems that think — not to replace human intelligence, but to amplify it.';
+      const ctaText = this.getAttribute('cta-text') || '';
+      const ctaLink = this.getAttribute('cta-link') || '#';
       const focusTitle = this.getAttribute('focus-title') || 'Think better. <br/>Build smarter.'
 
       const featuredContent = this.getAttribute('featured-content') || '';
-      const image     = this.getAttribute('image') || '';                 // e.g. /assets/hero.jpg
-      const style     = "hero-inner " + (this.getAttribute('style') || '');    
-      const overlay   = this.getAttribute('overlay')                      // e.g. "rgba(0,0,0,.5)" or "linear-gradient(...)"
-                        || 'linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35))';
-      const position  = this.getAttribute('position') || 'center 30%';    // CSS background-position
-      const minH      = this.getAttribute('min-h') || '52vh';             // optional
+      const image = this.getAttribute('image') || '';                 // e.g. /assets/hero.jpg
+      const style = "hero-inner " + (this.getAttribute('style') || '');
+      const overlay = this.getAttribute('overlay')                      // e.g. "rgba(0,0,0,.5)" or "linear-gradient(...)"
+        || 'linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35))';
+      const position = this.getAttribute('position') || 'center 30%';    // CSS background-position
+      const minH = this.getAttribute('min-h') || '52vh';             // optional
 
       const ctaContent = ctaLink ? `<a class="btn" href="${ctaLink}" aria-label="${ctaText}">${ctaText}</a>` : ctaText;
-      const cta        = ctaText ? ctaContent : '';
+      const cta = ctaText ? ctaContent : '';
 
       console.log('Hero component:', this.getAttribute('overlay') ? 'with overlay' : 'no overlay');
       // Note: no self-closing divs; keep proper open/close tags.
@@ -240,7 +237,7 @@
               </div>
               <div class="hero-overlay" style="background: ${overlay}"></div>
             </div>` : ''
-          }
+        }
           <div class="hero-content">
             <section class="hero-grid">
               <div class="cell c1 main">
@@ -275,8 +272,8 @@
   customElements.define('py-inner-hero', PYInnerHero);
 
   // Card
-  class PYCard extends HTMLElement{
-    connectedCallback(){
+  class PYCard extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
 
@@ -284,10 +281,10 @@
       const subtitle = this.getAttribute('subtitle') || '';
       const image = this.getAttribute('image') || ''; // optional
       const style = "card " + (this.getAttribute('style') || 'ystack'); // one of ['ystack', 'xstack', 'zstack']
-      const href  = this.getAttribute('href')  || null;
-      const btn   = this.getAttribute('button-label') || '';
-      const btnStyle   = this.getAttribute('button-style') || '';
-      const body  = this.innerHTML.trim();
+      const href = this.getAttribute('href') || null;
+      const btn = this.getAttribute('button-label') || '';
+      const btnStyle = this.getAttribute('button-style') || '';
+      const body = this.innerHTML.trim();
       const linkAndCta = href ? `<div class="card-cta">
               <a class="btn ${btnStyle}" href="${href}" aria-label="${title ? `Abrir ${title}` : ''}">${btn}</a>
             </div>` : "";
@@ -308,8 +305,8 @@
   }
   customElements.define('py-card', PYCard);
 
-  class PYCarousel extends HTMLElement{
-    connectedCallback(){
+  class PYCarousel extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
 
@@ -446,8 +443,8 @@
   }
   customElements.define('py-popup', PYPopUp);
 
-  class PYCalendar extends HTMLElement{
-    connectedCallback(){
+  class PYCalendar extends HTMLElement {
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return; // <-- guard
       this.dataset.upgraded = '1';
 
@@ -480,39 +477,39 @@
   }
   customElements.define('py-calendar', PYCalendar);
 
-// (() => {
-//   // --- injeta CSS uma só vez ---
-//   const STYLE_ID = 'py-faq-styles';
-//   if (!document.getElementById(STYLE_ID)) {
-//     const s = document.createElement('style');
-//     s.id = STYLE_ID;
-//     s.textContent = `
-//       .py-faqs{display:block; width:100%; max-width:70ch; margin-inline:auto}
-//       .py-faq{border-bottom:1px solid var(--faq-border, rgba(0,0,0,.12))}
-//       .py-faq__q{
-//         all:unset; display:flex; align-items:center; justify-content:space-between;
-//         width:100%; cursor:pointer; padding:1rem 0; line-height:1.4;
-//       }
-//       .py-faq__q:focus-visible{outline:2px solid var(--faq-focus, #5b9aff); outline-offset:4px}
-//       .py-faq__q-text{font-weight:600}
-//       .py-faq__icon{transition:transform .2s ease; margin-left:1rem; flex:0 0 auto}
-//       .py-faq[open] .py-faq__icon{transform:rotate(180deg)}
-//       .py-faq__a{
-//         overflow:hidden; height:0; transition:height .22s ease;
-//       }
-//       .py-faq__a-inner{
-//         padding:0 0 1rem 0; color:var(--faq-answer, inherit);
-//       }
-//     `;
-//     document.head.appendChild(s);
-//   }
+  // (() => {
+  //   // --- injeta CSS uma só vez ---
+  //   const STYLE_ID = 'py-faq-styles';
+  //   if (!document.getElementById(STYLE_ID)) {
+  //     const s = document.createElement('style');
+  //     s.id = STYLE_ID;
+  //     s.textContent = `
+  //       .py-faqs{display:block; width:100%; max-width:70ch; margin-inline:auto}
+  //       .py-faq{border-bottom:1px solid var(--faq-border, rgba(0,0,0,.12))}
+  //       .py-faq__q{
+  //         all:unset; display:flex; align-items:center; justify-content:space-between;
+  //         width:100%; cursor:pointer; padding:1rem 0; line-height:1.4;
+  //       }
+  //       .py-faq__q:focus-visible{outline:2px solid var(--faq-focus, #5b9aff); outline-offset:4px}
+  //       .py-faq__q-text{font-weight:600}
+  //       .py-faq__icon{transition:transform .2s ease; margin-left:1rem; flex:0 0 auto}
+  //       .py-faq[open] .py-faq__icon{transform:rotate(180deg)}
+  //       .py-faq__a{
+  //         overflow:hidden; height:0; transition:height .22s ease;
+  //       }
+  //       .py-faq__a-inner{
+  //         padding:0 0 1rem 0; color:var(--faq-answer, inherit);
+  //       }
+  //     `;
+  //     document.head.appendChild(s);
+  //   }
 
   // util: uid
   let uid = 0;
-  const nextId = (p='pyfaq') => `${p}-${++uid}`;
+  const nextId = (p = 'pyfaq') => `${p}-${++uid}`;
 
   class PYFaqs extends HTMLElement {
-    connectedCallback(){
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return;
       this.dataset.upgraded = '1';
       this.setAttribute('role', 'list');
@@ -535,21 +532,21 @@
 
         if (e.key === 'ArrowDown') {
           e.preventDefault();
-          (questions[idx+1] || questions[0]).focus();
+          (questions[idx + 1] || questions[0]).focus();
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
-          (questions[idx-1] || questions[questions.length-1]).focus();
+          (questions[idx - 1] || questions[questions.length - 1]).focus();
         } else if (e.key === 'Home') {
           e.preventDefault(); questions[0]?.focus();
         } else if (e.key === 'End') {
-          e.preventDefault(); questions[questions.length-1]?.focus();
+          e.preventDefault(); questions[questions.length - 1]?.focus();
         }
       });
     }
   }
 
   class PYFaq extends HTMLElement {
-    connectedCallback(){
+    connectedCallback() {
       if (this.dataset.upgraded === '1') return;
       this.dataset.upgraded = '1';
 
@@ -592,7 +589,7 @@
       });
     }
 
-    open(){
+    open() {
       if (this.hasAttribute('open')) return;
       this.setAttribute('open', '');
       this.$btn.setAttribute('aria-expanded', 'true');
@@ -609,10 +606,10 @@
         this.$panel.addEventListener('transitionend', onEnd);
       });
       // notifica o container
-      this.dispatchEvent(new CustomEvent('py-faq-opened', {bubbles:true, detail:{faq:this}}));
+      this.dispatchEvent(new CustomEvent('py-faq-opened', { bubbles: true, detail: { faq: this } }));
     }
 
-    close(){
+    close() {
       if (!this.hasAttribute('open')) return;
       this.removeAttribute('open');
       this.$btn.setAttribute('aria-expanded', 'false');
@@ -631,7 +628,7 @@
       this.$panel.addEventListener('transitionend', onEnd);
     }
 
-    toggle(){
+    toggle() {
       if (this.hasAttribute('open')) this.close();
       else this.open();
     }
@@ -659,42 +656,42 @@
  */
 
   class PYContactForm extends HTMLElement {
-  connectedCallback() {
-    if (this.dataset.upgraded === '1') return;
-    this.dataset.upgraded = '1';
-    const encoded = this.getAttribute('data-endpoint') || 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3ZGx0N1NsNVhxMWdTTGI0Wm14RGNCcFV2OFFVS1Q4UHNhaDFNazBvT2lFa01HaEpmUTcwblg2Zm5jQkxiaGxSaWgtdy9leGVj';
-    const endpoint = atob(encoded.trim());
-    const title = this.getAttribute('title') || 'Contact Us';
-    const body = this.innerHTML.trim();
-    const className = this.getAttribute('style') || '';
-    const cta = this.getAttribute('cta') || 'Send';
-    const successMsg = this.getAttribute('success-msg') || 'Thanks — message sent!';
-    const errorMsg = this.getAttribute('error-msg') || 'Sorry, something went wrong.';
-    const redirectUrlEncoded = this.getAttribute('redirect-url') || "";
-    const redirectEndpoint = atob(redirectUrlEncoded.trim());
-    const enableRedirection = redirectEndpoint.length > 0 ? "enabled" : "disabled";
+    connectedCallback() {
+      if (this.dataset.upgraded === '1') return;
+      this.dataset.upgraded = '1';
+      const encoded = this.getAttribute('data-endpoint') || 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3ZGx0N1NsNVhxMWdTTGI0Wm14RGNCcFV2OFFVS1Q4UHNhaDFNazBvT2lFa01HaEpmUTcwblg2Zm5jQkxiaGxSaWgtdy9leGVj';
+      const endpoint = atob(encoded.trim());
+      const title = this.getAttribute('title') || 'Contact Us';
+      const body = this.innerHTML.trim();
+      const className = this.getAttribute('style') || '';
+      const cta = this.getAttribute('cta') || 'Send';
+      const successMsg = this.getAttribute('success-msg') || 'Thanks — message sent!';
+      const errorMsg = this.getAttribute('error-msg') || 'Sorry, something went wrong.';
+      const redirectUrlEncoded = this.getAttribute('redirect-url') || "";
+      const redirectEndpoint = atob(redirectUrlEncoded.trim());
+      const enableRedirection = redirectEndpoint.length > 0 ? "enabled" : "disabled";
 
-    // Fields (comma-separated list)
-    const fields = (this.getAttribute('fields') || 'name,email,message')
-      .split(',')
-      .map(f => f.trim());
+      // Fields (comma-separated list)
+      const fields = (this.getAttribute('fields') || 'name,email,message')
+        .split(',')
+        .map(f => f.trim());
 
-    // Labels (optional)
-    const labels = JSON.parse(this.getAttribute('labels') || '{}');
+      // Labels (optional)
+      const labels = JSON.parse(this.getAttribute('labels') || '{}');
 
-    // Build form HTML
-    const inputs = fields.map(name => {
-      const label = labels[name] || name.charAt(0).toUpperCase() + name.slice(1);
-      const type = name === 'email' ? 'email' : (name === 'message' ? 'textarea' : 'text');
-      return `
+      // Build form HTML
+      const inputs = fields.map(name => {
+        const label = labels[name] || name.charAt(0).toUpperCase() + name.slice(1);
+        const type = name === 'email' ? 'email' : (name === 'message' ? 'textarea' : 'text');
+        return `
         <div class="form-field">
           ${type === 'textarea'
             ? `<textarea name="${name}" placeholder="${label}" required></textarea>`
             : `<input type="${type}" name="${name}" placeholder="${label}" required />`}
         </div>`;
-    }).join('');
+      }).join('');
 
-    this.innerHTML = `
+      this.innerHTML = `
       <form class="py-contact-form ${className}" data-active="true">
         ${title ? `<h3>${title}</h3>` : ''}
         ${inputs}
@@ -707,51 +704,51 @@
       </form>
     `;
 
-    const form = this.querySelector('form');
-    const status = this.querySelector('.form-status');
+      const form = this.querySelector('form');
+      const status = this.querySelector('.form-status');
 
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form));
-      console.log(`SENDING DATA: `, data);
-      status.textContent = 'Sending…';
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form));
+        console.log(`SENDING DATA: `, data);
+        status.textContent = 'Sending…';
 
-      try {
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {'Content-Type': 'application/json'}
-        });
-        if (res.ok) {
-          form.reset();
-          status.textContent = successMsg;
-          form.dataset.active = "false";   // sets data-active="false"
-        } else throw new Error('Network error');
-      } catch (err) {
-        console.error(err);
-        status.textContent = errorMsg;
-      }
-    });
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            status.textContent = successMsg;
+            form.dataset.active = "false";   // sets data-active="false"
+          } else throw new Error('Network error');
+        } catch (err) {
+          console.error(err);
+          status.textContent = errorMsg;
+        }
+      });
+    }
   }
-}
 
-customElements.define('py-contact-form', PYContactForm);
+  customElements.define('py-contact-form', PYContactForm);
 
-// Dropdown
-class PYDropdown extends HTMLElement {
-  connectedCallback() {
-    if (this.dataset.upgraded === '1') return;
-    this.dataset.upgraded = '1';
+  // Dropdown
+  class PYDropdown extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.upgraded === '1') return;
+      this.dataset.upgraded = '1';
 
-    const label = this.getAttribute('label') || 'Select an option';
+      const label = this.getAttribute('label') || 'Select an option';
 
-    const options = Array.from(this.querySelectorAll('option')).map(opt => ({
-      value: opt.value,
-      title: opt.getAttribute('title') || opt.textContent.trim(),
-      description: opt.getAttribute('description') || ''
-    }));
+      const options = Array.from(this.querySelectorAll('option')).map(opt => ({
+        value: opt.value,
+        title: opt.getAttribute('title') || opt.textContent.trim(),
+        description: opt.getAttribute('description') || ''
+      }));
 
-    this.innerHTML = `
+      this.innerHTML = `
       <div class="py-dropdown">
         <button class="dropdown-toggle" type="button" aria-expanded="false">${label}</button>
         <ul class="dropdown-list" hidden>
@@ -765,34 +762,34 @@ class PYDropdown extends HTMLElement {
       </div>
     `;
 
-    const toggle = this.querySelector('.dropdown-toggle');
-    const list = this.querySelector('.dropdown-list');
+      const toggle = this.querySelector('.dropdown-toggle');
+      const list = this.querySelector('.dropdown-list');
 
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
-      list.hidden = expanded;
-    });
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        list.hidden = expanded;
+      });
 
-    list.addEventListener('click', (e) => {
-      const item = e.target.closest('li[data-value]');
-      if (!item) return;
-      const value = item.dataset.value;
-      toggle.textContent = item.querySelector('h4').textContent;
-      list.hidden = true;
-      toggle.setAttribute('aria-expanded', 'false');
-      this.dataset.value = value;
-      this.dispatchEvent(new CustomEvent('change', { detail: { value } }));
-      const affectedFieldName = this.dataset.field || 'reason';
+      list.addEventListener('click', (e) => {
+        const item = e.target.closest('li[data-value]');
+        if (!item) return;
+        const value = item.dataset.value;
+        toggle.textContent = item.querySelector('h4').textContent;
+        list.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        this.dataset.value = value;
+        this.dispatchEvent(new CustomEvent('change', { detail: { value } }));
+        const affectedFieldName = this.dataset.field || 'reason';
 
-      const form = this.closest('form');
-      if (form) {
-        const affectedField = form.querySelector(`[name="${affectedFieldName}"]`);
-        if (affectedField) affectedField.value = value;
-      }
-    });
+        const form = this.closest('form');
+        if (form) {
+          const affectedField = form.querySelector(`[name="${affectedFieldName}"]`);
+          if (affectedField) affectedField.value = value;
+        }
+      });
+    }
   }
-}
-customElements.define('py-dropdown', PYDropdown);
+  customElements.define('py-dropdown', PYDropdown);
 
 })();

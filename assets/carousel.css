@@ -80,6 +80,7 @@
       backdrop-filter: blur(2px);
       text-align: center;
       transition: transform .4s ease, box-shadow .4s ease;
+      width: 100%;
     }
 
     .node:hover {
@@ -91,6 +92,7 @@
 @media (max-width: 600px) {
     .timeline {
         flex-direction: column;
+        margin-bottom: 6rem;
     }
 
     .timeline::before {

@@ -29,10 +29,12 @@ header.site .logo img {
 .brand h1{margin:0;font-size:clamp(1.2rem,3.2vw,2.6rem)}
 .brand .sub{margin:0;color:var(--muted); font-size:.95rem}
 nav.site a{
-  text-decoration:none; 
-  padding:.55rem .7rem; 
+  text-decoration:none;
+  padding:.55rem .7rem;
   border-radius:.6rem;
-  font-size: 1.25rem;
+  font-size: 18px;
+  color: #3c413c;
+  text-transform:capitalize;
 }
 nav.site a:hover{background:rgba(127,127,127,.12)}
 
@@ -67,7 +69,7 @@ nav.site a:hover{background:rgba(127,127,127,.12)}
   margin: 4px 0;
   background: currentColor; /* inherits text color */
   border-radius: 1px;
-  color: #111;
+  color: #111111;
 }
 
 header.site .logo a {

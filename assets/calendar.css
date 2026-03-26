@@ -87,7 +87,7 @@
 
   .event.family {
     background: #ECE7D5;
-    color: #0f172a;
+    color: #111111;
   }
 
   /* Legenda / instruções */
@@ -125,7 +125,7 @@
     color: var(--brand-primary);
   }
   .variant.meditation .sq {
-    color: var(--brand-primary));
+    color: var(--brand-primary);
   }
 
   .variant.family .sq {

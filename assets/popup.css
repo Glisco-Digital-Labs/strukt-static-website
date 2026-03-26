@@ -86,7 +86,7 @@
 }
 
 .popup-overlay h4 {
-    color: black;
+    color: #111111;
     font-size: clamp(1.1rem, 2vw, 2.4rem);
     margin-top: 0;
 }
@@ -130,8 +130,7 @@
 .popup-overlay .popup-actions .btn.primary {
   cursor: pointer;
   background-color: var(--brand-white);
-  color: black;
-  padding: 0.25rem 1rem;
+  color: #111111;
   margin: 0.5rem;
 }
 
